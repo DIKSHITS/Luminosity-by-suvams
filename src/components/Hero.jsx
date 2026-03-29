@@ -34,7 +34,7 @@ const Hero = () => {
   const images = collections[index];
 
   return (
-    <section className="hero">
+    <section id="hero" className="section hero">
       <div className="hero-content">
         <h1 className="fade-down">LUMINOSITY</h1>
         <p className="subtitle fade-down delay-1">by suvam</p>

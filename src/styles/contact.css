@@ -12,7 +12,7 @@
 }
 
 .contact-heading h1 {
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 40px);
   letter-spacing: 6px;
   font-weight: 300;
 }
@@ -40,11 +40,12 @@
   height: 420px;
   object-fit: cover;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .contact-left p {
   font-size: 14px;
-  line-height: 2;
+  line-height: 1.9;
   color: #555;
   margin-bottom: 20px;
 }
@@ -57,7 +58,7 @@
 
 /* ================= RIGHT ================= */
 .contact-title {
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   letter-spacing: 4px;
   font-weight: 300;
   margin-bottom: 40px;
@@ -86,8 +87,16 @@ textarea {
   font-size: 12px;
   letter-spacing: 2px;
   outline: none;
+  transition: 0.3s;
 }
 
+/* INPUT FOCUS EFFECT */
+input:focus,
+textarea:focus {
+  border-bottom: 1px solid black;
+}
+
+/* TEXTAREA */
 textarea {
   resize: none;
 }
@@ -135,8 +144,23 @@ button:hover {
   letter-spacing: 1px;
 }
 
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    gap: 50px;
+  }
+
+  .contact-left img {
+    height: 350px;
+  }
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
+  .contact {
+    padding: 80px 15px;
+  }
 
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -146,6 +170,10 @@ button:hover {
 
   .form-row {
     flex-direction: column;
+  }
+
+  .contact-left img {
+    height: 280px;
   }
 
   .contact-bottom {

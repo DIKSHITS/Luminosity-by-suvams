@@ -86,7 +86,7 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="faq">
+    <section id="faq" className="section">
 
       <div className="line"></div>
 

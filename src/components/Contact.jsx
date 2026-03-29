@@ -3,7 +3,7 @@ import "../styles/contact.css";
 
 const Contact = () => {
   return (
-    <section className="contact">
+    <section id="contact" className="contact section">
 
       {/* ================= HEADING ================= */}
       <div className="contact-heading">
@@ -18,7 +18,7 @@ const Contact = () => {
         <div className="contact-left">
           <img
             src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
-            alt=""
+            alt="contact"
           />
 
           <p>
@@ -40,8 +40,8 @@ const Contact = () => {
           <form>
 
             <div className="form-row">
-              <input type="text" placeholder="YOUR FULL NAME" />
-              <input type="email" placeholder="EMAIL ADDRESS" />
+              <input type="text" placeholder="YOUR FULL NAME" required />
+              <input type="email" placeholder="EMAIL ADDRESS" required />
             </div>
 
             <div className="form-row">
@@ -50,7 +50,7 @@ const Contact = () => {
             </div>
 
             <div className="form-row">
-              <input type="text" placeholder="PHONE NUMBER" />
+              <input type="tel" placeholder="PHONE NUMBER" />
               <input type="text" placeholder="BUDGET" />
             </div>
 

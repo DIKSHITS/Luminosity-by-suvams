@@ -27,7 +27,7 @@ const Portfolio = () => {
   const get = (i) => images[(index + i + images.length) % images.length];
 
   return (
-    <section className="portfolio">
+    <section id="portfolio" className="section">
 
       {/* TITLE */}
       <div className="portfolio-header">

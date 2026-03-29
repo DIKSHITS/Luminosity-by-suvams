@@ -1,31 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/navbar.css";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = (event, id) => {
+    event.preventDefault();
+    document.getElementById(id).scrollIntoView({
+      behavior: "smooth"
+    });
+    setOpen(false); // ✅ CLOSE MENU AFTER CLICK
+  };
+
   return (
     <header className="navbar">
+
       {/* LEFT */}
-      <div className="nav-left">
-        <div className="menu-icon">
+      <div className="nav-left" onClick={() => setOpen(!open)}>
+        <div className={`menu-icon ${open ? "active" : ""}`}>
           <span></span>
           <span></span>
         </div>
       </div>
 
       {/* CENTER */}
-      <nav className="nav-center">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#portfolio">our Craft</a>
-        <a href="#experience">Feedback</a>
-        <a href="#journal">FAQ</a>
-        <a href="#contact">CONTACT</a>
+      <nav className={`nav-center ${open ? "show" : ""}`}>
+        <a href="#hero" onClick={(event) => handleClick(event, "hero")}>HOME</a>
+        <a href="#lovestories" onClick={(event) => handleClick(event, "lovestories")}>ABOUT</a>
+        <a href="#portfolio" onClick={(event) => handleClick(event, "portfolio")}>OUR CRAFT</a>
+        <a href="#feedback" onClick={(event) => handleClick(event, "feedback")}>FEEDBACK</a>
+        <a href="#faq" onClick={(event) => handleClick(event, "faq")}>FAQ</a>
+        <a href="#contact" onClick={(event) => handleClick(event, "contact")}>CONTACT</a>
       </nav>
 
       {/* RIGHT */}
-      <div className="nav-right">
-        EN | FR
-      </div>
+      <div className="nav-right"></div>
+
     </header>
   );
 };

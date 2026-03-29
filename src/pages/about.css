@@ -1,23 +1,27 @@
-/* ================= MAIN SECTION ================= */
+/* ================= SECTION ================= */
 .about-page {
   background: #f5f2ed;
-  padding: 120px 20px;
+  padding: clamp(80px, 10vw, 120px) 20px;
+}
+
+/* ================= HEADER ================= */
+.about-header {
   text-align: center;
+  margin-bottom: clamp(40px, 6vw, 80px);
 }
 
-/* ================= TITLE ================= */
-.about-page h1 {
-  font-size: 42px;
-  letter-spacing: 6px;
+.about-header h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: clamp(3px, 1vw, 6px);
   font-weight: 300;
-  margin-bottom: 5px;
+  color: #1f1f1f;
 }
 
-.about-page .sub {
-  font-size: 14px;
+.about-header .sub {
+  font-size: 13px;
   color: #777;
-  margin-bottom: 60px;
   letter-spacing: 2px;
+  margin-top: 8px;
 }
 
 /* ================= LAYOUT ================= */
@@ -26,71 +30,98 @@
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: clamp(30px, 6vw, 80px);
   align-items: center;
 }
 
 /* ================= IMAGE ================= */
-.about-content img {
+.about-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-img img {
   width: 100%;
-  height: 520px;
+  height: clamp(350px, 45vw, 520px);
   object-fit: cover;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  transition: transform 0.8s ease;
+}
+
+/* HOVER */
+.about-img:hover img {
+  transform: scale(1.06);
 }
 
 /* ================= TEXT ================= */
-.about-content div {
-  text-align: left;
+.about-text {
+  max-width: 480px;
 }
 
-.about-content h2 {
-  font-size: 28px;
+.about-text h2 {
+  font-size: clamp(22px, 3vw, 30px);
   font-weight: 400;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
-.about-content p {
-  font-size: 14px;
+/* PARAGRAPH STYLE (EDITORIAL LOOK) */
+.about-text p {
+  font-size: clamp(14px, 1.4vw, 16px);
   line-height: 1.9;
   color: #555;
-  max-width: 420px;
+  margin-bottom: 16px;
 }
 
-/* ================= EXTRA SPACING ================= */
-.about-content p + p {
-  margin-top: 15px;
+/* FIRST LINE EMPHASIS */
+.about-text p:first-of-type {
+  font-size: clamp(16px, 1.8vw, 18px);
+  color: #222;
 }
 
-/* ================= HOVER IMAGE EFFECT ================= */
-.about-content img:hover {
-  transform: scale(1.02);
-  transition: 0.4s ease;
+/* ================= ANIMATION ================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.3s;
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  .about-page {
-    padding: 80px 15px;
-  }
-
   .about-content {
     grid-template-columns: 1fr;
-    gap: 40px;
     text-align: center;
   }
 
-  .about-content div {
-    text-align: center;
+  .about-text {
+    max-width: 100%;
   }
 
-  .about-content img {
-    height: 350px;
+  .about-text h2 {
+    margin-top: 10px;
   }
 
-  .about-page h1 {
-    font-size: 28px;
-    letter-spacing: 3px;
+  .about-img img {
+    height: 300px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 70px 15px;
+  }
+
+  .about-img img {
+    height: 260px;
   }
 }

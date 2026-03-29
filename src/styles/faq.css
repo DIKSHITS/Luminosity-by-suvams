@@ -1,13 +1,13 @@
 /* ================= SECTION ================= */
-.faq {
+.section {
   background: #f5f2ed;
-  padding: 120px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
 /* ================= LINE ================= */
 .line {
-  width: 70%;
+  width: 60%;
   height: 1px;
   background: #ddd;
   margin: 20px auto;
@@ -15,7 +15,7 @@
 
 /* ================= TITLE ================= */
 .faq-title {
-  font-size: 22px;
+  font-size: clamp(18px, 2vw, 28px);
   letter-spacing: 6px;
   font-weight: 300;
   color: #444;
@@ -23,58 +23,97 @@
 
 /* ================= QUOTE ================= */
 .faq-quote {
-  font-size: 24px;
+  font-size: clamp(18px, 2.5vw, 28px);
   font-style: italic;
   color: #777;
-  margin: 50px 0;
+  margin: 40px 0;
   font-family: "Playfair Display", serif;
 }
 
 /* ================= CONTENT ================= */
 .faq-content {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   text-align: left;
+
+  /* GRID FOR RESPONSIVENESS */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
 }
 
 /* ================= ITEM ================= */
 .faq-item {
-  margin-bottom: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
   border-bottom: 1px solid #ddd;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.faq-item:hover {
+  transform: translateY(-3px);
 }
 
 /* QUESTION */
 .faq-item h4 {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 500;
   margin-bottom: 10px;
-  color: #444;
+  color: #333;
 }
 
 /* ANSWER */
 .faq-item p {
-  font-size: 14px;
-  line-height: 2;
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.8;
   color: #666;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
+/* ================= TABLET ================= */
+@media (min-width: 768px) {
+  .faq-content {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+  }
 
-  .faq {
-    padding: 80px 15px;
+  .line {
+    width: 50%;
+  }
+}
+
+/* ================= LARGE LAPTOP ================= */
+@media (min-width: 1024px) {
+  .section {
+    padding: 120px 40px;
   }
 
   .faq-content {
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* ================= DESKTOP / BIG SCREEN ================= */
+@media (min-width: 1440px) {
+  .faq-content {
+    max-width: 1200px;
   }
 
-  .faq-title {
-    font-size: 16px;
+  .line {
+    width: 40%;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .section {
+    padding: 70px 15px;
   }
 
-  .faq-quote {
-    font-size: 18px;
+  .faq-content {
+    text-align: left;
+  }
+
+  .faq-item {
+    padding-bottom: 20px;
   }
 }

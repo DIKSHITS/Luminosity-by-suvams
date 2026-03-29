@@ -8,8 +8,8 @@ const Footer = () => {
 
       {/* SOCIAL ICONS */}
       <div className="footer-icons">
-        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
-        <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a>
+        <a href="https://www.instagram.com/luminosity_by_suvam?igsh=MXB2OWEzOXR1ODJudg==" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+        <a href="https://www.youtube.com/@luminositybysuvam" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a>
         <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
       </div>
 
