@@ -1,0 +1,55 @@
+/* ================= SECTION ================= */
+.editorial {
+  background: #f4f1ec;
+  padding: 120px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= CONTENT ================= */
+.editorial-content {
+  max-width: 900px;
+}
+
+/* ================= ICON ================= */
+.editorial-icon {
+  font-family: cursive;
+  font-size: 40px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* ================= HEADING ================= */
+.editorial h2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* ================= PARAGRAPH ================= */
+.editorial p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* ================= BUTTON ================= */
+.editorial-btn {
+  padding: 14px 30px;
+  border: none;
+  background: #e5e1db;
+  letter-spacing: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editorial-btn:hover {
+  background: #d6d2cc;
+  transform: translateY(-2px);
+}

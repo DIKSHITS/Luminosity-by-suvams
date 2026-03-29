@@ -1,0 +1,41 @@
+/* ================= FOOTER ================= */
+.footer {
+  background: #f5f2ed;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* ================= ICONS ================= */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.footer-icons a {
+  font-size: 18px;
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.footer-icons a:hover {
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* ================= LINE ================= */
+.footer-line {
+  width: 60px;
+  height: 1px;
+  background: #ccc;
+  margin: 20px auto;
+}
+
+/* ================= TEXT ================= */
+.footer-text {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #777;
+}

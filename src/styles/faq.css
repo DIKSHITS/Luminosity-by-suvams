@@ -1,0 +1,80 @@
+/* ================= SECTION ================= */
+.faq {
+  background: #f5f2ed;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* ================= LINE ================= */
+.line {
+  width: 70%;
+  height: 1px;
+  background: #ddd;
+  margin: 20px auto;
+}
+
+/* ================= TITLE ================= */
+.faq-title {
+  font-size: 22px;
+  letter-spacing: 6px;
+  font-weight: 300;
+  color: #444;
+}
+
+/* ================= QUOTE ================= */
+.faq-quote {
+  font-size: 24px;
+  font-style: italic;
+  color: #777;
+  margin: 50px 0;
+  font-family: "Playfair Display", serif;
+}
+
+/* ================= CONTENT ================= */
+.faq-content {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+}
+
+/* ================= ITEM ================= */
+.faq-item {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* QUESTION */
+.faq-item h4 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* ANSWER */
+.faq-item p {
+  font-size: 14px;
+  line-height: 2;
+  color: #666;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .faq {
+    padding: 80px 15px;
+  }
+
+  .faq-content {
+    text-align: center;
+  }
+
+  .faq-title {
+    font-size: 16px;
+  }
+
+  .faq-quote {
+    font-size: 18px;
+  }
+}

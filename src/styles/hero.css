@@ -1,0 +1,199 @@
+/* ================= HERO ================= */
+.hero {
+  height: 100vh;
+  background: #eae6e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ================= TEXT ================= */
+.hero-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  letter-spacing: 14px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 60px;
+}
+
+/* ================= COLLAGE ================= */
+.collage {
+  position: relative;
+  width: 1050px;
+  height: 600px;
+  margin: 0 auto;
+  left: -200px;
+}
+
+/* ================= COMMON ================= */
+.img {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+}
+
+.img:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* INNER IMAGE FIX */
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= POSITIONS ================= */
+
+/* LEFT */
+.left-img {
+  width: 260px;
+  height: 320px;
+  left: 90px;
+  bottom: 10px;
+  background: white;
+  padding: 14px;
+  transform: rotate(-2deg);
+ z-index: 5;
+}
+
+/* CENTER */
+.center-img {
+  width: 400px;
+  height: 520px;
+  left: 320px;
+  top: 40px;
+ 
+}
+
+/* TOP RIGHT */
+.top-right {
+  width: 200px;
+  height: 190px;
+  right:120px;
+  top: 120px;
+   background: white;
+  transform: rotate(1.2deg);
+   
+}
+
+/* RIGHT TALL */
+.right-tall {
+  width: 260px;
+  height: 350px;
+  right: -250px;
+  top: 100px;
+  background: white;
+  padding: 14px;
+  transform: rotate(1.5deg);
+  z-index: 5;
+}
+
+/* BOTTOM RIGHT */
+.bottom-right {
+  width: 240px;
+  height: 250px;
+  right: 10px;
+  bottom: 10px;
+  transform: rotate(-1deg);
+}
+
+/* ================= ANIMATION ================= */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.fade-down {
+  opacity: 0;
+  animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DELAYS */
+.delay-1 { animation-delay: .2s; }
+.delay-2 { animation-delay: .4s; }
+.delay-3 { animation-delay: .6s; }
+.delay-4 { animation-delay: .8s; }
+.delay-5 { animation-delay: 1s; }
+
+/* SLIDE TRANSITION */
+.slide-transition {
+  animation: slideFade 1s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .collage {
+    width: 100%;
+    height: 400px;
+  }
+
+  .center-img {
+    width: 240px;
+    height: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .left-img,
+  .right-tall,
+  .top-right,
+  .bottom-right {
+    display: none;
+  }
+}

@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #eae6e1;
+  z-index: 1000;
+}
+
+/* CENTER NAV */
+.nav-center {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.nav-center a:hover {
+  opacity: 0.6;
+}
+
+/* RIGHT */
+.nav-right {
+  font-size: 12px;
+}
+
+/* MENU ICON */
+.menu-icon span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: black;
+  margin: 4px 0;
+}

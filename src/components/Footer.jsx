@@ -1,0 +1,28 @@
+import React from "react";
+import "../styles/footer.css";
+import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+
+      {/* SOCIAL ICONS */}
+      <div className="footer-icons">
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+        <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a>
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
+      </div>
+
+      {/* LINE */}
+      <div className="footer-line"></div>
+
+      {/* TEXT */}
+      <p className="footer-text">
+        Luminosity by Suvam © 2026
+      </p>
+
+    </footer>
+  );
+};
+
+export default Footer;
