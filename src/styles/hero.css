@@ -93,10 +93,10 @@
 
 /* TOP RIGHT */
 .top-right {
-  width: 230px;
+  width: 200px;
   height: 240px;
-  right:80px;
-  top: 80px;
+  right:110px;
+  top: 70px;
    background: white;
   transform: rotate(1.2deg);
    
@@ -104,10 +104,10 @@
 
 /* RIGHT TALL */
 .right-tall {
-  width: 250px;
-  height: 350px;
-  right: -190px;
-  top: 100px;
+  width: 230px;
+  height: 300px;
+  right: -130px;
+  top: 120px;
   background: white;
   padding: 14px;
   transform: rotate(1.5deg);
@@ -116,11 +116,11 @@
 
 /* BOTTOM RIGHT */
 .bottom-right {
-  width: 250px;
-  height: 200px;
-  right: 40px;
+  width: 190px;
+  height: 230px;
+  right: 80px;
   
-  bottom: 40px;
+  bottom: 45px;
   transform: rotate(-1deg);
 }
 
@@ -195,9 +195,9 @@
 
   /* CENTER IMAGE */
   .center-img {
-    width: 220px;
+    width: 255px;
     height: 320px;
-    left: 30%;
+    left: 27%;
     top: 40px;
     transform: translateX(-50%);
     z-index: 3;
@@ -207,7 +207,7 @@
   .left-img {
     width: 160px;
     height: 200px;
-    left: -10%;
+    left: -12%;
     bottom: 0;
     transform: rotate(-5deg);
     padding: 8px;
