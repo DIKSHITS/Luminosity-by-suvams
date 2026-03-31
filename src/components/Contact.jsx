@@ -3,99 +3,48 @@ import "../styles/contact.css";
 
 const Contact = () => {
   return (
-    <section id="contact" className="contact section">
+    <section className="contact">
 
-      {/* ================= HEADING ================= */}
-      <div className="contact-heading">
-        <h1>CONTACT US</h1>
-        <p>We’d love to hear your story</p>
+      {/* HEADER */}
+      <div className="contact-header">
+        <h1>Contact us</h1>
+
+        <p>
+          Think we’d be a great fit? I’d love to connect with you.
+          Fill out the contact form and share your story,
+          and what you’re dreaming of. We’ll bring it to life
+          <span> together.</span>
+        </p>
       </div>
 
-      {/* ================= MAIN ================= */}
-      <div className="contact-wrapper">
+      {/* SUBTITLE */}
+      <h3>Ready to begin your forever story?</h3>
 
-        {/* LEFT SIDE */}
-        <div className="contact-left">
-          <img
-            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
-            alt="contact"
-          />
+      {/* FORM */}
+      <div className="form-container">
+        <form>
 
-          <p>
-            Thinking we’ll be a great fit? I’d be honored to meet you!
-            Fill out the contact form and tell me all about your story,
-            your loved ones, and what you're dreaming of.
-          </p>
+          <div className="row">
+            <input type="text" placeholder="YOUR FULL NAME" />
+            <input type="email" placeholder="EMAIL ADDRESS" />
+          </div>
 
-          <p className="email">luminosity@suvam.com</p>
-        </div>
+          <div className="row">
+            <input type="text" placeholder="REQUESTED DATE" />
+            <input type="text" placeholder="VENUE" />
+          </div>
 
-        {/* RIGHT SIDE FORM */}
-        <div className="contact-right">
+          <div className="row">
+            <input type="text" placeholder="PHONE NUMBER" />
+          </div>
 
-          <h2 className="contact-title">
-            Ready for your love story to begin?
-          </h2>
+          <textarea placeholder="TELL US ABOUT YOUR STORY..."></textarea>
 
-          <form>
+          <div className="btn-area">
+            <button>SUBMIT</button>
+          </div>
 
-            <div className="form-row">
-              <input type="text" placeholder="YOUR FULL NAME" required />
-              <input type="email" placeholder="EMAIL ADDRESS" required />
-            </div>
-
-            <div className="form-row">
-              <input type="text" placeholder="REQUESTED DATE" />
-              <input type="text" placeholder="VENUE" />
-            </div>
-
-            <div className="form-row">
-              <input type="tel" placeholder="PHONE NUMBER" />
-              <input type="text" placeholder="BUDGET" />
-            </div>
-
-            <textarea
-              placeholder="TELL US ABOUT YOUR STORY..."
-              rows="4"
-            ></textarea>
-
-            <button type="submit">INQUIRE NOW</button>
-
-          </form>
-
-        </div>
-
-      </div>
-
-      {/* ================= BOTTOM INFO ================= */}
-      <div className="contact-bottom">
-
-        <div className="bottom-item">
-          <h4>LOCATION</h4>
-          <p>
-            MUMBAI | DELHI | GOA <br />
-            INDIA, WORLDWIDE
-          </p>
-        </div>
-
-        <div className="bottom-item">
-          <h4>BUSINESS HOURS</h4>
-          <p>
-            MONDAY – SATURDAY <br />
-            10AM – 7PM IST <br />
-            BY APPOINTMENT ONLY
-          </p>
-        </div>
-
-        <div className="bottom-item">
-          <h4>CONTACT INFO</h4>
-          <p>
-            PHONE: +91 98765 43210 <br />
-            LUMINOSITY@SUVAM.COM <br />
-            @LUMINOSITY_PHOTO
-          </p>
-        </div>
-
+        </form>
       </div>
 
     </section>

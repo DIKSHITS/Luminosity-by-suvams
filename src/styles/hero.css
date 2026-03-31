@@ -72,10 +72,10 @@
 
 /* LEFT */
 .left-img {
-  width: 260px;
+  width: 250px;
   height: 320px;
   left: 90px;
-  bottom: 10px;
+  bottom: 60px;
   background: white;
   padding: 14px;
   transform: rotate(-2deg);
@@ -93,10 +93,10 @@
 
 /* TOP RIGHT */
 .top-right {
-  width: 200px;
-  height: 190px;
-  right:120px;
-  top: 120px;
+  width: 230px;
+  height: 240px;
+  right:80px;
+  top: 80px;
    background: white;
   transform: rotate(1.2deg);
    
@@ -104,9 +104,9 @@
 
 /* RIGHT TALL */
 .right-tall {
-  width: 260px;
+  width: 250px;
   height: 350px;
-  right: -250px;
+  right: -190px;
   top: 100px;
   background: white;
   padding: 14px;
@@ -116,10 +116,11 @@
 
 /* BOTTOM RIGHT */
 .bottom-right {
-  width: 240px;
-  height: 250px;
-  right: 4px;
-  bottom: 10px;
+  width: 250px;
+  height: 200px;
+  right: 40px;
+  
+  bottom: 40px;
   transform: rotate(-1deg);
 }
 
@@ -194,9 +195,9 @@
 
   /* CENTER IMAGE */
   .center-img {
-    width: 240px;
+    width: 220px;
     height: 320px;
-    left: 50%;
+    left: 30%;
     top: 40px;
     transform: translateX(-50%);
     z-index: 3;
@@ -206,11 +207,11 @@
   .left-img {
     width: 160px;
     height: 200px;
-    left: 15%;
+    left: -10%;
     bottom: 0;
     transform: rotate(-5deg);
     padding: 8px;
-    z-index: 2;
+   
   }
 
   /* HIDE ONLY EXTRA IMAGES */

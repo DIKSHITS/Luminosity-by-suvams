@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/feedback.css";
+
+// 👉 IMPORT YOUR IMAGES
+import img1 from "../assets/feedback/img1.jpg";
+import img2 from "../assets/feedback/img2.jpg";
 
 const feedbacks = [
   {
-    text: `"Suvam's empathy, attention to detail, and sense of humour kept everyone in great spirits despite the pouring rain we had on the day! The photos we've received truly speak louder than words. Even though the weather was gloomy, the photos captured all the warmth, love, and brightness we shared on the day."`,
-    author: "- Rahul & Priya",
-    image:
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80",
+    text: `"Suvam's empathy, attention to detail, and sense of humour kept everyone in great spirits despite the pouring rain we had on the day! The photos we've received truly speak louder than words."`,
+    author: "- akash & Anwesha",
+    image: img1,
   },
   {
-    text: `"Absolutely amazing experience! The photos feel like a movie — every emotion captured beautifully. Highly recommended!"`,
-    author: "- Aman & Neha",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+    text: `"Absolutely amazing experience! The photos feel like a movie — every emotion captured beautifully."`,
+    author: "- simran & saiyam",
+    image: img2,
   },
 ];
 
 const Feedback = () => {
   const [index, setIndex] = useState(0);
+
+  // 🔥 AUTO SCROLL
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % feedbacks.length);
+    }, 4000); // change slide every 4 sec
+
+    return () => clearInterval(interval);
+  }, []);
 
   const next = () => {
     setIndex((prev) => (prev + 1) % feedbacks.length);

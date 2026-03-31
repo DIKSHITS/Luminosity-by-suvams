@@ -4,34 +4,26 @@ import "../styles/editorial.css";
 const EditorialSection = () => {
   return (
     <section className="editorial">
-      
       <div className="editorial-content">
 
-        {/* top script icon */}
-        <div className="editorial-icon">~</div>
+        {/* Script Heading */}
+        <h1 className="editorial-script">
+          A modern approach to an age old tradition
+        </h1>
 
-        {/* main heading */}
-        <h2>
-          HERE EDITORIAL ELEGANCE MEETS JOY-FILLED STORYTELLING <br />
-          CAPTURING REFINED CELEBRATIONS & PLAYFUL HEARTS
-        </h2>
-
-        {/* paragraph */}
-        <p>
-          Your story deserves to be told through sophisticated portraiture and
-          joy-filled moments that feel effortlessly you. We’ll create refined
-          editorial imagery that celebrates every heartfelt emotion, every
-          meaningful detail, and all those perfectly imperfect in-between
-          moments. Your legacy of cherished memories begins here.
+        {/* Paragraph */}
+        <p className="editorial-text">
+          We’ll create refined editorial imagery that celebrates every heartfelt emotion,
+          every meaningful detail, and all those perfectly imperfect in-between moments.
+          Your legacy of cherished memories <span>begins here.</span>
         </p>
 
-        {/* button */}
+        {/* Button */}
         <button className="editorial-btn">
-          LEARN MORE ABOUT THE WEDDING EXPERIENCE →
+          LEARN MORE ABOUT EXPERIENCE
         </button>
 
       </div>
-
     </section>
   );
 };

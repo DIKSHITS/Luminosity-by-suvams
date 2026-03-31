@@ -26,6 +26,20 @@ const About = () => {
         <p className="sub">by Suvam</p>
       </div>
 
+      {/* INTRO TEXT (NEW ✨) */}
+      <div className="about-intro fade-in delay-1">
+        <p>
+          Luminosity by Suvam is built on a simple idea—capturing moments as they truly are.
+          Honest, unfiltered, and full of emotion.
+        </p>
+
+        <p>
+          We believe the most powerful memories live in the in-between—
+          the quiet smiles, the fleeting glances, the emotions that often go unnoticed,
+          yet mean everything.
+        </p>
+      </div>
+
       {/* CONTENT */}
       <div className="about-content">
 
@@ -38,7 +52,7 @@ const About = () => {
         </div>
 
         {/* TEXT */}
-        <div className="about-text fade-in delay-1">
+        <div className="about-text fade-in delay-2">
           <h2>About Suvam</h2>
 
           <p>
@@ -46,17 +60,26 @@ const About = () => {
           </p>
 
           <p>
-            For over five years, photography has shaped the way I see the world. 
-            Street photography taught me to observe, to wait, and to find meaning in the unnoticed.
+            For over five years, photography has shaped the way I see the world.
+            Street photography taught me patience—the art of observing, waiting,
+            and finding meaning in the unnoticed.
           </p>
 
           <p>
-            Over time, that vision evolved into documenting weddings—where every moment carries depth,
-            every glance holds a story, and every frame becomes a memory.
+            That perspective slowly evolved into documenting weddings—
+            where every moment carries depth, every glance holds a story,
+            and every frame becomes something to hold on to forever.
           </p>
 
           <p>
-            Today, Luminosity by Suvam reflects that journey—where raw, real moments meet refined storytelling.
+            What started as capturing strangers on the streets
+            turned into preserving the most intimate and heartfelt moments of people’s lives.
+          </p>
+
+          <p>
+            Today, Luminosity by Suvam reflects that journey—
+            where raw, real moments meet refined storytelling,
+            and every story is told with intention.
           </p>
         </div>
 

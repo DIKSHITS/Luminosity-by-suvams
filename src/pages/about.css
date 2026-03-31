@@ -1,88 +1,165 @@
+/* ================= FONTS ================= */
+/* Add in index.html */
+/*
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;400&display=swap" rel="stylesheet">
+*/
+
 /* ================= SECTION ================= */
 .about-page {
-  background: #f5f2ed;
-  padding: clamp(80px, 10vw, 120px) 20px;
+  background: #f8f6f2;
+  padding: clamp(100px, 12vw, 140px) 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SOFT PREMIUM BACKGROUND */
+.about-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, #ffffff 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #eae4dc 0%, transparent 60%);
+  filter: blur(60px);
+  opacity: 0.5;
+  z-index: 0;
 }
 
 /* ================= HEADER ================= */
 .about-header {
   text-align: center;
-  margin-bottom: clamp(40px, 6vw, 80px);
+  margin-bottom: clamp(60px, 8vw, 100px);
+  position: relative;
+  z-index: 1;
 }
 
 .about-header h1 {
-  font-size: clamp(28px, 5vw, 48px);
-  letter-spacing: clamp(3px, 1vw, 6px);
-  font-weight: 300;
-  color: #1f1f1f;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: 4px;
+  font-weight: 500;
+  color: #1a1a1a;
 }
 
 .about-header .sub {
-  font-size: 13px;
-  color: #777;
-  letter-spacing: 2px;
-  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #8a8a8a;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
+/* ================= FANCY SCRIPT TEXT ================= */
+.about-intro {
+  max-width: 850px;
+  margin: 0 auto 100px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* MAIN SCRIPT */
+.fancy-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.5;
+  color: #3a3a3a;
+}
+
+/* SECOND LINE */
+.fancy-sub {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(24px, 3vw, 40px);
+  color: #555;
+  margin-top: 10px;
 }
 
 /* ================= LAYOUT ================= */
 .about-content {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(30px, 6vw, 80px);
+  gap: clamp(40px, 6vw, 100px);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* ================= IMAGE ================= */
 .about-img {
   position: relative;
   overflow: hidden;
+  border-radius: 14px;
 }
 
 .about-img img {
   width: 100%;
-  height: clamp(350px, 45vw, 520px);
+  height: clamp(380px, 45vw, 560px);
   object-fit: cover;
-  transition: transform 0.8s ease;
+
+  transition: transform 1s ease, filter 0.6s ease;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.15);
 }
 
-/* HOVER */
+/* GLOW OVERLAY */
+.about-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.18)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* HOVER EFFECT */
 .about-img:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.about-img:hover::after {
+  opacity: 1;
 }
 
 /* ================= TEXT ================= */
 .about-text {
-  max-width: 480px;
+  max-width: 520px;
 }
 
+/* TITLE */
 .about-text h2 {
-  font-size: clamp(22px, 3vw, 30px);
-  font-weight: 400;
-  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 500;
+  margin-bottom: 24px;
   letter-spacing: 1px;
+  color: #1a1a1a;
 }
 
-/* PARAGRAPH STYLE (EDITORIAL LOOK) */
+/* PARAGRAPH */
 .about-text p {
+  font-family: 'Inter', sans-serif;
   font-size: clamp(14px, 1.4vw, 16px);
-  line-height: 1.9;
-  color: #555;
-  margin-bottom: 16px;
+  line-height: 2;
+  color: #666;
+  margin-bottom: 18px;
 }
 
 /* FIRST LINE EMPHASIS */
 .about-text p:first-of-type {
   font-size: clamp(16px, 1.8vw, 18px);
   color: #222;
+  font-weight: 500;
 }
 
 /* ================= ANIMATION ================= */
 .fade-in {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
+  transform: translateY(70px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fade-in.show {
@@ -90,9 +167,8 @@
   transform: translateY(0);
 }
 
-.delay-1 {
-  transition-delay: 0.3s;
-}
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.5s; }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
@@ -106,22 +182,38 @@
     max-width: 100%;
   }
 
-  .about-text h2 {
-    margin-top: 10px;
+  .about-img img {
+    height: 320px;
   }
 
-  .about-img img {
-    height: 300px;
+  .fancy-text {
+    font-size: 42px;
+  }
+
+  .fancy-sub {
+    font-size: 30px;
   }
 }
 
-/* ================= SMALL MOBILE ================= */
+/* ================= SMALL ================= */
 @media (max-width: 480px) {
   .about-page {
-    padding: 70px 15px;
+    padding: 80px 15px;
   }
 
   .about-img img {
     height: 260px;
+  }
+
+  .fancy-text {
+    font-size: 34px;
+  }
+
+  .fancy-sub {
+    font-size: 24px;
+  }
+
+  .about-header h1 {
+    letter-spacing: 2px;
   }
 }
