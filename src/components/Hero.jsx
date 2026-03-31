@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../styles/hero.css";
 
+/* IMPORT YOUR LOGO */
+import logo from "../assets/hero/logo.png";
+
 /* IMPORT YOUR IMAGES */
 import img1 from "../assets/hero/img1.jpg";
 import img2 from "../assets/hero/img2.jpg";
@@ -14,7 +17,7 @@ import img8 from "../assets/hero/img8.jpg";
 import img9 from "../assets/hero/img9.jpg";
 import img10 from "../assets/hero/img10.jpg";
 
-/* SAME STRUCTURE — JUST REPLACED URLs */
+/* IMAGE COLLECTIONS */
 const collections = [
   [img1, img2, img3, img5, img4],
   [img6, img7, img8, img10, img9],
@@ -37,9 +40,13 @@ const Hero = () => {
   return (
     <section id="hero" className="section hero">
       <div className="hero-content">
-        <h1 className="fade-down">LUMINOSITY</h1>
-        <p className="subtitle fade-down delay-1">by suvam</p>
 
+        {/* LOGO */}
+        <div className="logo-wrapper fade-down">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
+
+        {/* COLLAGE */}
         <div key={index} className="collage slide-transition">
 
           {/* LEFT */}

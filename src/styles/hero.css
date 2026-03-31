@@ -7,6 +7,25 @@
   align-items: center;
   text-align: center;
 }
+/* ================= LOGO ================= */
+.logo-wrapper {
+  margin-bottom: clamp(20px, 5vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: clamp(120px, 20vw, 280px);
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.95);
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
 
 /* ================= TEXT ================= */
 /* ================= TEXT ================= */
