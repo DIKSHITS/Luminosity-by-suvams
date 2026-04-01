@@ -187,15 +187,7 @@
     left: 0;
   }
 
-  .center-img {
-    width: 255px;
-    height: 320px;
-    left: 27%;
-    top: 40px;
-    transform: translateX(-50%);
-    z-index: 3;
-  }
-
+ 
   .left-img {
     width: 160px;
     height: 200px;
@@ -203,6 +195,14 @@
     bottom: 0;
     transform: rotate(-5deg);
     padding: 8px;
+  }
+   .center-img {
+    width: 255px;
+    height: 320px;
+    left: 27%;
+    top: 40px;
+    transform: translateX(-50%);
+    z-index: 3;
   }
 
   .right-tall,

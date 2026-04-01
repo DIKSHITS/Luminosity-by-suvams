@@ -1,83 +1,86 @@
+/* ================= FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ================= SECTION ================= */
 .love {
   position: relative;
-  padding: clamp(80px, 10vw, 140px) 20px 120px;
-  background: #f5f2ed;
+  padding: clamp(70px, 10vw, 140px) 20px 100px;
   overflow: hidden;
   isolation: isolate;
+  background: #f5f2ed;
 }
 
-/* ================= BACKGROUND ================= */
-/* ================= BACKGROUND ================= */
+/* ================= BACKGROUND IMAGE ================= */
 .love::before {
   content: "";
   position: absolute;
   inset: 0;
 
- 
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
 
-  filter: blur(14px) brightness(0.85);
-  transform: scale(1.15);
-  opacity: 0.5;
+  filter: blur(14px) brightness(0.8);
+  transform: scale(1.1);
+  opacity: 0.6;
 
   z-index: -2;
 }
 
-/* ================= LUXURY OVERLAY ================= */
+/* ================= OVERLAY ================= */
 .love::after {
   content: "";
   position: absolute;
   inset: 0;
 
-  /* SOFT WEDDING TONE */
   background: linear-gradient(
     rgba(245, 242, 237, 0.85),
-    rgba(245, 242, 237, 0.9)
+    rgba(245, 242, 237, 0.95)
   );
 
   backdrop-filter: blur(6px);
-
-  z-index: -1;
-}
-/* OVERLAY (more premium tone) */
-.love::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(245, 242, 237, 0.75);
-  backdrop-filter: blur(4px);
   z-index: -1;
 }
 
 /* ================= WRAPPER ================= */
 .love-wrapper {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 1.3fr 1fr;
-  gap: clamp(30px, 6vw, 90px);
-
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: clamp(25px, 5vw, 80px);
   max-width: 1200px;
   margin: auto;
   align-items: center;
 }
 
-/* ================= IMAGE COMMON ================= */
-.love-left img,
-.love-center img,
-.love-right img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-
-  transition: transform 0.7s ease, filter 0.7s ease, box-shadow 0.4s ease;
+/* SOFT GLOW EFFECT */
+.love-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
+  z-index: -1;
 }
 
-/* PREMIUM HOVER */
-.love-left img:hover,
-.love-center img:hover,
-.love-right img:hover {
-  transform: scale(1.06);
-  filter: brightness(1.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+/* ================= IMAGE ================= */
+.love img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+}
+
+.love img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* ================= LEFT ================= */
@@ -85,23 +88,19 @@
   text-align: right;
 }
 
-.love-left img {
-  margin-bottom: 20px;
-}
-
 .love-left p {
-  font-size: clamp(13px, 1.3vw, 15px);
-  line-height: 1.8;
-  color: #555;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.9;
+  color: #5a5a5a;
   max-width: 260px;
   margin-left: auto;
 }
 
 /* ================= CENTER ================= */
 .love-center img {
-  height: clamp(360px, 45vw, 540px);
+  height: clamp(320px, 40vw, 520px);
   object-fit: cover;
-  border-radius: 10px;
 }
 
 /* ================= RIGHT ================= */
@@ -109,17 +108,19 @@
   text-align: left;
 }
 
+/* ================= BRAND TITLE ================= */
 .brand-title {
-  font-size: clamp(26px, 3vw, 34px);
-  letter-spacing: 6px;
-  font-weight: 300;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(42px, 5vw, 72px);
+  color: #2b2b2b;
   margin-bottom: 10px;
-  color: #222;
-
-  animation: fadeUp 1s ease forwards;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+/* ================= TAG ================= */
 .love-right .tag {
+  font-family: 'Playfair Display', serif;
   font-size: clamp(11px, 1.2vw, 13px);
   letter-spacing: 3px;
   color: #777;
@@ -129,22 +130,22 @@
 /* ================= BUTTON ================= */
 .love-btn-wrap {
   text-align: center;
-  margin-top: clamp(50px, 6vw, 70px);
+  margin-top: clamp(40px, 6vw, 70px);
 }
 
 .love-btn-wrap button {
+  font-family: 'Playfair Display', serif;
   padding: 14px 36px;
-  background: transparent;
   border: 1px solid #222;
+  background: transparent;
   font-size: 12px;
   letter-spacing: 3px;
   cursor: pointer;
-  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* BUTTON HOVER ANIMATION */
+/* BUTTON HOVER */
 .love-btn-wrap button::before {
   content: "";
   position: absolute;
@@ -152,7 +153,7 @@
   background: #222;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s ease;
+  transition: 0.4s;
   z-index: -1;
 }
 
@@ -176,24 +177,9 @@
   transform: translateY(0);
 }
 
-/* DELAYS */
 .delay-1 { transition-delay: 0.2s; }
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
-
-/* ================= KEYFRAMES ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-    letter-spacing: 12px;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: 6px;
-  }
-}
 
 /* ================= TABLET ================= */
 @media (max-width: 992px) {
@@ -211,38 +197,26 @@
   .love-left p {
     margin: auto;
   }
-
-  .love-center img {
-    height: 420px;
-  }
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .love {
-    padding: 80px 15px;
+    padding: 60px 15px;
   }
 
   .love-center img {
-    height: 320px;
-  }
-}
-
-/* ================= SMALL MOBILE ================= */
-@media (max-width: 480px) {
-  .love {
-    padding: 60px 12px;
-  }
-
-  .love-center img {
-    height: 260px;
+    height: 280px;
   }
 
   .love-btn-wrap button {
     width: 100%;
   }
+}
 
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 400px) {
   .brand-title {
-    letter-spacing: 3px;
+    font-size: 38px;
   }
 }

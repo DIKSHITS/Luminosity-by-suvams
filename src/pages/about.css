@@ -1,127 +1,114 @@
 /* ================= FONTS ================= */
-/* Add in index.html */
-/*
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;400&display=swap" rel="stylesheet">
-*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* ================= SECTION ================= */
 .about-page {
-  background: #f8f6f2;
-  padding: clamp(100px, 12vw, 140px) 20px;
   position: relative;
+  padding: clamp(80px, 10vw, 140px) 20px;
+  background: #f5f2ed;
   overflow: hidden;
+  isolation: isolate;
 }
 
-/* SOFT PREMIUM BACKGROUND */
+/* ================= BACKGROUND ================= */
 .about-page::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 30%, #ffffff 0%, transparent 60%),
-              radial-gradient(circle at 80% 70%, #eae4dc 0%, transparent 60%);
-  filter: blur(60px);
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  filter: blur(18px) brightness(0.85);
+  transform: scale(1.1);
   opacity: 0.5;
-  z-index: 0;
+  z-index: -2;
+}
+
+.about-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(245, 242, 237, 0.9),
+    rgba(245, 242, 237, 0.95)
+  );
+  backdrop-filter: blur(6px);
+  z-index: -1;
 }
 
 /* ================= HEADER ================= */
 .about-header {
   text-align: center;
-  margin-bottom: clamp(60px, 8vw, 100px);
-  position: relative;
-  z-index: 1;
+  margin-bottom: clamp(50px, 6vw, 100px);
 }
 
 .about-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 5vw, 52px);
-  letter-spacing: 4px;
-  font-weight: 500;
-  color: #1a1a1a;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(40px, 6vw, 80px);
+  color: #2b2b2b;
 }
 
 .about-header .sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  color: #8a8a8a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: #777;
   letter-spacing: 3px;
   margin-top: 10px;
 }
 
-/* ================= FANCY SCRIPT TEXT ================= */
+/* ================= INTRO ================= */
 .about-intro {
-  max-width: 850px;
-  margin: 0 auto 100px;
   text-align: center;
-  position: relative;
-  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto clamp(60px, 8vw, 100px);
+  padding: 0 10px;
 }
 
-/* MAIN SCRIPT */
 .fancy-text {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(34px, 5vw, 60px);
-  line-height: 1.5;
+  font-size: clamp(28px, 5vw, 64px);
   color: #3a3a3a;
+  line-height: 1.4;
 }
 
-/* SECOND LINE */
 .fancy-sub {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(24px, 3vw, 40px);
+  font-size: clamp(20px, 3vw, 42px);
   color: #555;
   margin-top: 10px;
 }
 
-/* ================= LAYOUT ================= */
+/* ================= CONTENT ================= */
 .about-content {
   max-width: 1150px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 100px);
+  gap: clamp(30px, 6vw, 100px);
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 /* ================= IMAGE ================= */
 .about-img {
-  position: relative;
   overflow: hidden;
   border-radius: 14px;
 }
 
 .about-img img {
   width: 100%;
-  height: clamp(380px, 45vw, 560px);
+  height: clamp(300px, 40vw, 560px);
   object-fit: cover;
-
-  transition: transform 1s ease, filter 0.6s ease;
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.15);
+  transition: transform 1s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
 }
 
-/* GLOW OVERLAY */
-.about-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.05),
-    rgba(0,0,0,0.18)
-  );
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-/* HOVER EFFECT */
 .about-img:hover img {
   transform: scale(1.05);
-  filter: brightness(1.05);
-}
-
-.about-img:hover::after {
-  opacity: 1;
 }
 
 /* ================= TEXT ================= */
@@ -129,37 +116,26 @@
   max-width: 520px;
 }
 
-/* TITLE */
 .about-text h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 500;
-  margin-bottom: 24px;
-  letter-spacing: 1px;
+  font-size: clamp(22px, 3vw, 36px);
+  margin-bottom: 20px;
   color: #1a1a1a;
 }
 
-/* PARAGRAPH */
 .about-text p {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(14px, 1.4vw, 16px);
-  line-height: 2;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 1.4vw, 17px);
+  line-height: 1.9;
   color: #666;
-  margin-bottom: 18px;
-}
-
-/* FIRST LINE EMPHASIS */
-.about-text p:first-of-type {
-  font-size: clamp(16px, 1.8vw, 18px);
-  color: #222;
-  font-weight: 500;
+  margin-bottom: 16px;
 }
 
 /* ================= ANIMATION ================= */
 .fade-in {
   opacity: 0;
-  transform: translateY(70px);
-  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(60px);
+  transition: all 1.2s ease;
 }
 
 .fade-in.show {
@@ -170,9 +146,15 @@
 .delay-1 { transition-delay: 0.3s; }
 .delay-2 { transition-delay: 0.5s; }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
+/* ================= LARGE SCREENS (1200px+) ================= */
+@media (min-width: 1200px) {
+  .about-content {
+    max-width: 1200px;
+  }
+}
 
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
   .about-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -183,22 +165,14 @@
   }
 
   .about-img img {
-    height: 320px;
-  }
-
-  .fancy-text {
-    font-size: 42px;
-  }
-
-  .fancy-sub {
-    font-size: 30px;
+    height: 350px;
   }
 }
 
-/* ================= SMALL ================= */
-@media (max-width: 480px) {
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
   .about-page {
-    padding: 80px 15px;
+    padding: 70px 15px;
   }
 
   .about-img img {
@@ -206,14 +180,25 @@
   }
 
   .fancy-text {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .fancy-sub {
-    font-size: 24px;
+    font-size: 22px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 400px) {
+  .about-header h1 {
+    font-size: 36px;
   }
 
-  .about-header h1 {
-    letter-spacing: 2px;
+  .fancy-text {
+    font-size: 26px;
+  }
+
+  .fancy-sub {
+    font-size: 20px;
   }
 }

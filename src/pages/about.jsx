@@ -22,21 +22,18 @@ const About = () => {
 
       {/* HEADER */}
       <div className="about-header fade-in">
-        <h1>LUMINOSITY</h1>
+        <h1>Luminosity</h1>
         <p className="sub">by Suvam</p>
       </div>
 
-      {/* INTRO TEXT (NEW ✨) */}
+      {/* INTRO (SCRIPT STYLE ✨) */}
       <div className="about-intro fade-in delay-1">
-        <p>
-          Luminosity by Suvam is built on a simple idea—capturing moments as they truly are.
-          Honest, unfiltered, and full of emotion.
+        <p className="fancy-text">
+          Luminosity by Suvam is built on a simple idea—
         </p>
 
-        <p>
-          We believe the most powerful memories live in the in-between—
-          the quiet smiles, the fleeting glances, the emotions that often go unnoticed,
-          yet mean everything.
+        <p className="fancy-sub">
+          capturing moments as they truly are.
         </p>
       </div>
 

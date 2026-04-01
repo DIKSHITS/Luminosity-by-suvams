@@ -12,8 +12,7 @@ const Contact = () => {
         <p>
           Think we’d be a great fit? I’d love to connect with you.
           Fill out the contact form and share your story,
-          and what you’re dreaming of. We’ll bring it to life
-          <span> together.</span>
+          and what you’re dreaming of. We’ll bring it to life together.
         </p>
       </div>
 
@@ -41,7 +40,7 @@ const Contact = () => {
           <textarea placeholder="TELL US ABOUT YOUR STORY..."></textarea>
 
           <div className="btn-area">
-            <button>SUBMIT</button>
+            <button type="submit">SUBMIT</button>
           </div>
 
         </form>

@@ -1,15 +1,27 @@
+/* ================= FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
+
 /* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* ================= BIG CAPITAL "A" ================= */
+.first-letter {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2em;
+  line-height: 0;
+  margin-right: 8px;
+  display: inline-block;
+  transform: translateY(6px);
+}
 
 /* SECTION */
 .editorial {
   width: 100%;
   min-height: 100vh;
-  background: #efefef;
+  background: #f5f2ed; /* warmer luxury tone */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,53 +36,66 @@
   padding: 0 10px;
 }
 
-/* SCRIPT HEADING */
+/* ================= SCRIPT HEADING ================= */
 .editorial-script {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(32px, 6vw, 60px); /* auto scale */
-  color: #4a4a4a;
+  font-size: clamp(40px, 6vw, 80px);
+  color: #2b2b2b;
   margin-bottom: clamp(20px, 3vw, 30px);
-  line-height: 1.3;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
-/* PARAGRAPH */
+/* ================= PARAGRAPH ================= */
 .editorial-text {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(13px, 1.6vw, 16px);
-  color: #6a6a6a;
+  font-family: 'Playfair Display', serif; /* 🔥 luxury font */
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: #5a5a5a;
   line-height: 1.9;
   max-width: 720px;
   margin: 0 auto clamp(30px, 4vw, 45px);
   padding: 0 10px;
+  letter-spacing: 0.3px;
 }
 
-/* "begins here" */
+/* SCRIPT WORD */
 .editorial-text span {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(20px, 3vw, 28px);
-  color: #4a4a4a;
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: #2b2b2b;
+  margin-left: 5px;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .editorial-btn {
-  background: #8c8c8c;
-  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(12px, 1.2vw, 14px);
+  letter-spacing: 3px;
+  background: none;
   border: none;
-  padding: clamp(12px, 1.5vw, 16px) clamp(20px, 3vw, 32px);
-  font-size: clamp(11px, 1.2vw, 14px);
-  letter-spacing: 2px;
-  font-family: 'Inter', sans-serif;
+  color: #2b2b2b;
   cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+  position: relative;
+  padding-bottom: 6px;
 }
 
-/* BUTTON HOVER */
-.editorial-btn:hover {
-  background: #6f6f6f;
+/* UNDERLINE EFFECT */
+.editorial-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: #000;
+  transition: 0.4s ease;
 }
 
-/* ================= EXTRA SMALL DEVICES (PHONES <480px) ================= */
+.editorial-btn:hover::after {
+  width: 100%;
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
 @media (max-width: 480px) {
   .editorial {
     padding: 40px 15px;
@@ -78,6 +103,7 @@
 
   .editorial-text {
     line-height: 1.7;
+    font-size: 14px;
   }
 
   .editorial-btn {
@@ -86,38 +112,38 @@
   }
 }
 
-/* ================= TABLETS (481px - 768px) ================= */
+/* ================= TABLETS ================= */
 @media (min-width: 481px) and (max-width: 768px) {
   .editorial-content {
     max-width: 600px;
   }
 }
 
-/* ================= SMALL LAPTOPS (769px - 1024px) ================= */
+/* ================= SMALL LAPTOPS ================= */
 @media (min-width: 769px) and (max-width: 1024px) {
   .editorial-content {
     max-width: 750px;
   }
 }
 
-/* ================= LARGE SCREENS (1200px+) ================= */
+/* ================= LARGE SCREENS ================= */
 @media (min-width: 1200px) {
   .editorial-content {
     max-width: 1000px;
   }
 
   .editorial-script {
-    font-size: 64px;
+    font-size: 90px;
   }
 }
 
-/* ================= ULTRA WIDE (1600px+) ================= */
+/* ================= ULTRA WIDE ================= */
 @media (min-width: 1600px) {
   .editorial-content {
     max-width: 1100px;
   }
 
   .editorial-script {
-    font-size: 72px;
+    font-size: 100px;
   }
 }

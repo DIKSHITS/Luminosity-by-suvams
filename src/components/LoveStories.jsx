@@ -34,7 +34,8 @@ const LoveStories = () => {
             alt="love story"
           />
           <p>
-            With roots in fashion photography and cinematic storytelling...
+            With roots in fashion photography and cinematic storytelling,
+            every frame is crafted to feel timeless, emotional, and deeply personal.
           </p>
         </div>
 
@@ -48,7 +49,7 @@ const LoveStories = () => {
 
         {/* RIGHT */}
         <div className="love-right fade-in delay-2">
-          <h2 className="brand-title">LUMINOSITY</h2>
+          <h2 className="brand-title">Luminosity</h2>
 
           <p className="tag">
             BY SUVAM <br />

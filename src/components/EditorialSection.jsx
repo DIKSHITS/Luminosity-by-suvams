@@ -6,9 +6,9 @@ const EditorialSection = () => {
     <section className="editorial">
       <div className="editorial-content">
 
-        {/* Script Heading */}
+        {/* Script Heading with Big A */}
         <h1 className="editorial-script">
-          A modern approach to an age old tradition
+          <span className="first-letter">A</span> modern approach to an age old tradition
         </h1>
 
         {/* Paragraph */}
