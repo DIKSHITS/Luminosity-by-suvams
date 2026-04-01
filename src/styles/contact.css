@@ -21,19 +21,17 @@
   margin: 0 auto;
 }
 
-/* ✅ LUXURY THIN SCRIPT HEADING */
-.contact-header h1 {
-  font-family: 'Allura', cursive;
-  font-size: clamp(50px, 7vw, 110px);
-  color: #2b2b2b;
-  margin-bottom: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
-  font-weight: 400;
+.contact-header h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: clamp(50px, 7vw, 110px);
+  font-weight: 400 !important;
+  color: #2b2b2b;
+
   letter-spacing: 1px;
 
-  /* smoother thin rendering */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 /* Premium subtle subtitle */
 .contact h3 {
