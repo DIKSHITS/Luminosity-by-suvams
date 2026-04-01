@@ -7,12 +7,12 @@ import img2 from "../assets/feedback/img2.jpg";
 
 const feedbacks = [
   {
-    text: `"Suvam's empathy, attention to detail, and sense of humour kept everyone in great spirits despite the pouring rain we had on the day! The photos we've received truly speak louder than words."`,
+    text: `"Suvam and his team beautifully captured our engagement, making our special day even more memorable."`,
     author: "- akash & Anwesha",
     image: img1,
   },
   {
-    text: `"Absolutely amazing experience! The photos feel like a movie — every emotion captured beautifully."`,
+    text: `"We honestly couldn’t have asked for better wedding photographers. From the very beginning, they made us feel so comfortable that it never felt like a photoshoot—it felt like family capturing our special moments. The entire shoot was full of fun, laughter, and ease, and their friendly, warm nature made everything so natural. They are genuinely kind, cooperative, and incredibly professional at the same time. Even the after-wedding service has been amazing, with so much care and patience. He truly feels like a brother to me now. Thank you for capturing our wedding so beautifully and for giving us memories we will cherish forever. Highly recommended!"`,
     author: "- simran & saiyam",
     image: img2,
   },
