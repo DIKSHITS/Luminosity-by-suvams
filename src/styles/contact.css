@@ -8,7 +8,7 @@
 
 /* ================= SECTION ================= */
 .contact {
-  background: #f5f2ed;
+  background: whitesmoke;
   padding: clamp(60px, 8vw, 120px) 20px;
   text-align: center;
 }

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./about.css";
 import img26 from "../assets/hero/img26.jpg";
+/* IMPORT YOUR LOGO */
+import logo from "../assets/hero/logo.png";
 
 const About = () => {
 
@@ -21,18 +23,10 @@ const About = () => {
   return (
     <section className="about-page">
 
-      {/* HEADER */}
-      <div className="about-header fade-in">
-        <h1>Luminosity</h1>
-        <p className="sub">by Suvam</p>
-      </div>
-
-      {/* INTRO */}
-      <div className="about-intro fade-in delay-1">
-        <p className="fancy-sub">
-          capturing moments as they truly are.
-        </p>
-      </div>
+      {/* LOGO */}
+            <div className="logo-wrapper fade-down">
+              <img src={logo} alt="Logo" className="logo" />
+            </div>
 
       {/* CONTENT */}
       <div className="about-content">

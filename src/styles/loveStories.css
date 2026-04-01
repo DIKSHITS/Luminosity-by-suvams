@@ -24,32 +24,35 @@
   align-items: center;
 }
 
-/* ================= IMAGE ================= */
+/* ================= IMAGE FIX (FULL IMAGE SHOW) ================= */
+.love-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .love-image img {
   width: 100%;
-  height: clamp(320px, 38vw, 600px);
-  object-fit: cover;
+  height: auto;              /* 🔥 keeps original ratio */
+  max-height: 600px;         /* control size */
+  object-fit: contain;       /* 🔥 NO CROP */
   border-radius: 12px;
 }
 
+/* ================= CONTENT ================= */
 .love-content h2 {
   font-family: 'Allura', cursive;
   font-size: clamp(45px, 6vw, 90px);
+  font-weight: 300; /* thin elegant */
 
-  font-weight: 300; /* 🔥 lighter feel */
-  
   color: #2b2b2b;
   margin-bottom: 20px;
 
   letter-spacing: 1px;
   line-height: 1.2;
 
-  /* smooth + thinner rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* reduce bold feel */
-  text-shadow: 0 0 0 transparent;
 }
 
 .love-content p {
@@ -62,21 +65,19 @@
 }
 
 /* ================= BUTTON ================= */
-/* ================= BUTTON ================= */
-/* ================= BUTTON ================= */
 .love-btn {
   margin-top: 30px;
 }
 
-/* REAL BUTTON STYLE */
 .love-btn button {
+  position: relative;
   font-family: 'Inter', sans-serif;
   font-size: clamp(12px, 1.1vw, 14px);
   letter-spacing: 2px;
   text-transform: uppercase;
 
   padding: 12px 30px;
-  border: 1px solid #2b2b2b;   /* 🔥 visible border */
+  border: 1px solid #2b2b2b;
   background: transparent;
   color: #2b2b2b;
 
@@ -84,19 +85,20 @@
   transition: all 0.3s ease;
 }
 
-/* 🔥 HOVER EFFECT (clear interaction) */
+/* HOVER */
 .love-btn button:hover {
   background: grey;
   color: #fff;
+  letter-spacing: 4px;
   transform: translateY(-2px);
 }
 
-/* CLICK EFFECT */
+/* CLICK */
 .love-btn button:active {
   transform: scale(0.97);
 }
 
-/* ✨ UNDERLINE ANIMATION */
+/* UNDERLINE EFFECT */
 .love-btn button::after {
   content: "";
   position: absolute;
@@ -105,22 +107,13 @@
   width: 0%;
   height: 1px;
   background: #000;
-
   transition: all 0.4s ease;
   transform: translateX(-50%);
 }
 
-/* 🔥 HOVER EFFECT */
-.love-btn button:hover {
-  letter-spacing: 4px;          /* smooth expand */
-  transform: translateY(-2px);  /* slight lift */
-  color: #000;
-}
-
 .love-btn button:hover::after {
-  width: 100%;                  /* underline expands */
+  width: 100%;
 }
-
 
 /* ================= SMALL MOBILE ================= */
 @media (max-width: 480px) {
@@ -135,7 +128,7 @@
   }
 
   .love-image img {
-    height: 260px;
+    max-height: 260px;
   }
 
   .love-content h2 {
@@ -151,7 +144,7 @@
   }
 
   .love-image img {
-    height: 300px;
+    max-height: 300px;
   }
 
   .love-btn {
@@ -162,7 +155,7 @@
 /* ================= TABLET ================= */
 @media (min-width: 769px) and (max-width: 1024px) {
   .love-image img {
-    height: 400px;
+    max-height: 400px;
   }
 
   .love-content h2 {
@@ -177,6 +170,6 @@
   }
 
   .love-image img {
-    height: 650px;
+    max-height: 650px;
   }
 }

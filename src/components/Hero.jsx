@@ -11,31 +11,25 @@ import img3 from "../assets/hero/img3.jpg";
 import img4 from "../assets/hero/img4.jpg";
 import img5 from "../assets/hero/img5.jpg";
 
-import img6 from "../assets/hero/img6.jpg";
-import img7 from "../assets/hero/img7.jpg";
-import img8 from "../assets/hero/img8.jpg";
-import img9 from "../assets/hero/img9.jpg";
-import img10 from "../assets/hero/img10.jpg";
-
-/* IMAGE COLLECTIONS */
-const collections = [
-  [img1, img2, img3, img5, img4],
-  [img6, img7, img8, img10, img9],
-];
+/* SINGLE COLLECTION */
+const initialImages = [img1, img2, img3, img4, img5];
 
 const Hero = () => {
-  const [index, setIndex] = useState(0);
+  const [images, setImages] = useState(initialImages);
 
-  /* AUTO SLIDE */
+  /* AUTO SLIDE (ROTATE IMAGES) */
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % collections.length);
-    }, 5000);
+      setImages((prev) => {
+        const newArr = [...prev];
+        const first = newArr.shift(); // remove first
+        newArr.push(first); // add to end
+        return newArr;
+      });
+    }, 4000); // change every 4 sec
 
     return () => clearInterval(interval);
   }, []);
-
-  const images = collections[index];
 
   return (
     <section id="hero" className="section hero">
@@ -47,7 +41,7 @@ const Hero = () => {
         </div>
 
         {/* COLLAGE */}
-        <div key={index} className="collage slide-transition">
+        <div className="collage">
 
           {/* LEFT */}
           <div className="img left-img fade-up delay-1">

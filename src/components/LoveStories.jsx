@@ -1,21 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import "../styles/loveStories.css";
 
 /* IMPORT IMAGE */
-import img12 from "../assets/hero/img12.jpg";
+import img26 from "../assets/hero/img26.jpg";
 
 const LoveStories = () => {
-  const navigate = useNavigate();
+
 
   return (
-    <section className="love">
+    <section id="lovestories" className="love">
 
       <div className="love-single">
 
         {/* IMAGE */}
         <div className="love-image">
-          <img src={img12} alt="Luminosity by Suvam" />
+          <img src={img26} alt="Luminosity by Suvam" />
         </div>
 
         {/* TEXT */}
@@ -38,12 +38,7 @@ const LoveStories = () => {
             For us, it’s not just about taking photos. It’s about preserving memories in a way that feels genuine and timeless.
           </p>
 
-          {/* BUTTON */}
-          <div className="love-btn">
-            <button onClick={() => navigate("/about")}>
-              EXPLORE LUMINOSITY BY SUVAM
-            </button>
-          </div>
+         
         </div>
 
       </div>

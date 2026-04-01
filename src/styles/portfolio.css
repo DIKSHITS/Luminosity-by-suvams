@@ -9,10 +9,10 @@
 }
 
 /* ================= SECTION ================= */
-.section {
+#portfolio.section {
   position: relative;
   min-height: 100vh;
-  background: #f5f2ed;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(10px, 1vw, 14px);
   letter-spacing: 3px;
-  color: #888;
+  color: #666;
   margin-top: 10px;
 }
 
@@ -141,7 +141,7 @@
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .section {
+  #portfolio.section {
     padding: 70px 15px;
   }
 

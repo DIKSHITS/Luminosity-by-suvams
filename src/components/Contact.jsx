@@ -44,6 +44,7 @@ const Contact = forwardRef((props, ref) => {
       </div>
 
       <h3>Ready to begin your forever story?</h3>
+      <br />
 
       <div className="form-container">
         <form ref={form} onSubmit={sendEmail}>

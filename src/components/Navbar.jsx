@@ -6,9 +6,17 @@ const Navbar = () => {
 
   const handleClick = (event, id) => {
     event.preventDefault();
-    document.getElementById(id).scrollIntoView({
-      behavior: "smooth"
-    });
+    const target = document.getElementById(id);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    } else {
+      // Fallback for routes where sections are not mounted (e.g. /about)
+      window.location.href = `/#${id}`;
+    }
+
     setOpen(false); // ✅ CLOSE MENU AFTER CLICK
   };
 
