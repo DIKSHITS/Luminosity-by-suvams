@@ -32,15 +32,24 @@
   border-radius: 12px;
 }
 
-/* ================= TEXT ================= */
 .love-content h2 {
   font-family: 'Allura', cursive;
-  font-size: clamp(38px, 5vw, 70px);
-  font-weight: 400;
+  font-size: clamp(45px, 6vw, 90px);
+
+  font-weight: 300; /* 🔥 lighter feel */
+  
   color: #2b2b2b;
   margin-bottom: 20px;
 
+  letter-spacing: 1px;
+  line-height: 1.2;
+
+  /* smooth + thinner rendering */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* reduce bold feel */
+  text-shadow: 0 0 0 transparent;
 }
 
 .love-content p {
