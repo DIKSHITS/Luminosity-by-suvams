@@ -186,24 +186,24 @@
     height: 420px;
     left: 0;
   }
-
- 
   .left-img {
-    width: 160px;
+    width: 180px;
     height: 200px;
     left: -12%;
     bottom: 0;
     transform: rotate(-5deg);
     padding: 8px;
   }
-   .center-img {
-    width: 255px;
+  .center-img {
+    width: 260px;
     height: 320px;
     left: 27%;
     top: 40px;
     transform: translateX(-50%);
     z-index: 3;
   }
+
+
 
   .right-tall,
   .top-right,
