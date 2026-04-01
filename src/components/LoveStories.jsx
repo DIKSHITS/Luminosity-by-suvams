@@ -1,69 +1,51 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/loveStories.css";
 
-/* IMPORT YOUR IMAGES */
-import img11 from "../assets/hero/img11.jpg";
+/* IMPORT IMAGE */
 import img12 from "../assets/hero/img12.jpg";
-import img13 from "../assets/hero/img13.jpg";
 
 const LoveStories = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const elements = document.querySelectorAll(".fade-in");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-  }, []);
-
   return (
-    <section id="lovestories" className="love">
+    <section className="love">
 
-      <div className="love-wrapper">
+      <div className="love-single">
 
-        {/* LEFT */}
-        <div className="love-left fade-in">
-          <img src={img11} alt="love story" />
+        {/* IMAGE */}
+        <div className="love-image">
+          <img src={img12} alt="Luminosity by Suvam" />
+        </div>
+
+        {/* TEXT */}
+        <div className="love-content">
+          <h2>About Luminosity by Suvam</h2>
+
           <p>
-            With roots in fashion photography and cinematic storytelling,
-            every frame is crafted to feel timeless, emotional, and deeply personal.
-          </p>
-        </div>
-
-        {/* CENTER */}
-        <div className="love-center fade-in delay-1">
-          <img src={img12} alt="couple" />
-        </div>
-
-        {/* RIGHT */}
-        <div className="love-right fade-in delay-2">
-          <h2 className="brand-title">Luminosity</h2>
-
-          <p className="tag">
-            BY SUVAM <br />
-            WEDDING PHOTOGRAPHER
+            Luminosity by Suvam is all about capturing moments as they truly are real, honest, and full of emotion.
           </p>
 
-          <img src={img13} alt="wedding" />
+          <p>
+            With over five years behind the camera, our journey has grown from observing everyday life on the streets to documenting some of the most meaningful days in people’s lives. That foundation still shapes how we see and capture every story today.
+          </p>
+
+          <p>
+            We focus on the little things the smiles, the silence, the in-between moments that often go unnoticed but mean the most.
+          </p>
+
+          <p>
+            For us, it’s not just about taking photos. It’s about preserving memories in a way that feels genuine and timeless.
+          </p>
+
+          {/* BUTTON */}
+          <div className="love-btn">
+            <button onClick={() => navigate("/about")}>
+              EXPLORE LUMINOSITY BY SUVAM
+            </button>
+          </div>
         </div>
 
-      </div>
-
-      <div className="love-btn-wrap fade-in delay-3">
-        <button onClick={() => navigate("/about")}>
-          GET TO KNOW SUVAM
-        </button>
       </div>
 
     </section>

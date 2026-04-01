@@ -1,5 +1,5 @@
 /* ================= FONTS ================= */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@300;400;500&display=swap');
 
 /* RESET */
 * {
@@ -21,13 +21,27 @@
   margin: 0 auto;
 }
 
-/* ✅ ONLY HEADING SCRIPT */
+/* ✅ LUXURY THIN SCRIPT HEADING */
 .contact-header h1 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Allura', cursive;
   font-size: clamp(50px, 7vw, 110px);
   color: #2b2b2b;
   margin-bottom: 20px;
+
   font-weight: 400;
+  letter-spacing: 1px;
+
+  /* smoother thin rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Premium subtle subtitle */
+.contact h3 {
+  font-size: clamp(22px, 2.3vw, 32px);
+  color: #3a3a3a;
+
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 /* ✅ EVERYTHING ELSE NORMAL */
@@ -48,12 +62,7 @@ button {
   padding: 0 10px;
 }
 
-/* ================= SUBTITLE ================= */
-.contact h3 {
-  font-size: clamp(24px, 2.5vw, 34px);
-  margin-bottom: clamp(30px, 5vw, 60px);
-  color: #2b2b2b;
-}
+
 
 /* ================= FORM BOX ================= */
 .form-container {
@@ -177,7 +186,5 @@ button:hover::after {
     max-width: 1100px;
   }
 
-  .contact-header h1 {
-    font-size: 120px;
-  }
+  
 }

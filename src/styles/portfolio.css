@@ -28,10 +28,13 @@
   z-index: 2;
 }
 
+/* PREMIUM THIN SCRIPT */
 .portfolio-header h2 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Allura', cursive;
   font-size: clamp(40px, 5vw, 70px);
   color: #2b2b2b;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .portfolio-header p {
