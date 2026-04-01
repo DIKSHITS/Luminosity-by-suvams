@@ -10,6 +10,13 @@ import img17 from "../assets/hero/img17.jpg";
 import img18 from "../assets/hero/img18.jpg";
 import img19 from "../assets/hero/img19.jpg";
 import img20 from "../assets/hero/img20.jpg";
+import img21 from "../assets/hero/img21.jpg";
+import img22 from "../assets/hero/img22.jpg";
+import img23 from "../assets/hero/img23.jpg";
+import img24 from "../assets/hero/img24.jpg";
+import img25 from "../assets/hero/img25.jpg";
+import img27 from "../assets/hero/img27.jpg";
+import img28 from "../assets/hero/img28.jpg";
 
 const images = [
   img13,
@@ -20,6 +27,13 @@ const images = [
   img18,
   img19,
   img20,
+  img21,
+  img22,
+  img23,
+  img24,
+  img25,
+  img27,
+  img28,
 ];
 
 const Portfolio = () => {
