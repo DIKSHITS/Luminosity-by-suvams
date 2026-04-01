@@ -2,6 +2,11 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/loveStories.css";
 
+/* IMPORT YOUR IMAGES */
+import img11 from "../assets/hero/img11.jpg";
+import img12 from "../assets/hero/img12.jpg";
+import img13 from "../assets/hero/img13.jpg";
+
 const LoveStories = () => {
   const navigate = useNavigate();
 
@@ -29,10 +34,7 @@ const LoveStories = () => {
 
         {/* LEFT */}
         <div className="love-left fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
-            alt="love story"
-          />
+          <img src={img11} alt="love story" />
           <p>
             With roots in fashion photography and cinematic storytelling,
             every frame is crafted to feel timeless, emotional, and deeply personal.
@@ -41,10 +43,7 @@ const LoveStories = () => {
 
         {/* CENTER */}
         <div className="love-center fade-in delay-1">
-          <img
-            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
-            alt="couple"
-          />
+          <img src={img12} alt="couple" />
         </div>
 
         {/* RIGHT */}
@@ -56,11 +55,9 @@ const LoveStories = () => {
             WEDDING PHOTOGRAPHER
           </p>
 
-          <img
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80"
-            alt="wedding"
-          />
+          <img src={img13} alt="wedding" />
         </div>
+
       </div>
 
       <div className="love-btn-wrap fade-in delay-3">

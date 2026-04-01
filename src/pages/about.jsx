@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./about.css";
+import img26 from "../assets/hero/img26.jpg";
 
 const About = () => {
 
@@ -26,12 +27,11 @@ const About = () => {
         <p className="sub">by Suvam</p>
       </div>
 
-      {/* INTRO (SCRIPT STYLE ✨) */}
+      {/* INTRO */}
       <div className="about-intro fade-in delay-1">
         <p className="fancy-text">
           Luminosity by Suvam is built on a simple idea—
         </p>
-
         <p className="fancy-sub">
           capturing moments as they truly are.
         </p>
@@ -42,10 +42,7 @@ const About = () => {
 
         {/* IMAGE */}
         <div className="about-img fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"
-            alt="Suvam"
-          />
+          <img src={img26} alt="Suvam" />
         </div>
 
         {/* TEXT */}

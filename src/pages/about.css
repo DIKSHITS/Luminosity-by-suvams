@@ -28,6 +28,9 @@
   opacity: 0.5;
   z-index: -2;
 }
+.about-img img {
+  filter: contrast(1.05) brightness(1.02);
+}
 
 .about-page::after {
   content: "";

@@ -1,18 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "../styles/portfolio.css";
 
+/* IMPORT YOUR IMAGES */
+import img13 from "../assets/hero/img13.jpg";
+import img14 from "../assets/hero/img14.jpg";
+import img15 from "../assets/hero/img15.jpg";
+import img16 from "../assets/hero/img16.jpg";
+import img17 from "../assets/hero/img17.jpg";
+import img18 from "../assets/hero/img18.jpg";
+import img19 from "../assets/hero/img19.jpg";
+import img20 from "../assets/hero/img20.jpg";
+
 const images = [
-  "https://images.unsplash.com/photo-1519741497674-611481863552",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf",
-  "https://images.unsplash.com/photo-1522673607200-164d1b6ce486",
-  "https://images.unsplash.com/photo-1519225421980-715cb0215aed",
-  "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
 ];
 
 const Portfolio = () => {
   const [index, setIndex] = useState(2);
 
-  // AUTO SLIDE
+  /* AUTO SLIDER */
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
@@ -29,19 +42,18 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="section">
 
-      {/* TITLE */}
+      {/* HEADER */}
       <div className="portfolio-header">
         <h2>Our Craft</h2>
         <p>DISCOVER THE STORIES</p>
       </div>
 
-      {/* NAV LEFT */}
+      {/* NAVIGATION */}
       <div className="nav-text left" onClick={prev}>
         <span className="line"></span>
         <span>Prev</span>
       </div>
 
-      {/* NAV RIGHT */}
       <div className="nav-text right" onClick={next}>
         <span>Next</span>
         <span className="line"></span>
@@ -49,9 +61,9 @@ const Portfolio = () => {
 
       {/* SLIDER */}
       <div className="portfolio-track">
-        <img src={get(-1)} className="side left-img" alt="" />
-        <img src={get(0)} className="center" alt="" />
-        <img src={get(1)} className="side right-img" alt="" />
+        <img src={get(-1)} className="side left-img" alt="left" />
+        <img src={get(0)} className="center" alt="center" />
+        <img src={get(1)} className="side right-img" alt="right" />
       </div>
 
     </section>

@@ -11,71 +11,48 @@
 /* ================= SECTION ================= */
 .love {
   position: relative;
-  padding: clamp(70px, 10vw, 140px) 20px 100px;
+  padding: clamp(60px, 10vw, 140px) 20px clamp(60px, 8vw, 100px);
   overflow: hidden;
   isolation: isolate;
   background: #f5f2ed;
 }
 
-/* ================= BACKGROUND IMAGE ================= */
+/* ================= BACKGROUND ================= */
 .love::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-
+  background: url("../assets/hero/img12.jpg") center/cover no-repeat;
   filter: blur(14px) brightness(0.8);
   transform: scale(1.1);
-  opacity: 0.6;
-
+  opacity: 0.5;
   z-index: -2;
 }
 
-/* ================= OVERLAY ================= */
 .love::after {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: linear-gradient(
-    rgba(245, 242, 237, 0.85),
-    rgba(245, 242, 237, 0.95)
-  );
-
+  background: rgba(245, 242, 237, 0.9);
   backdrop-filter: blur(6px);
   z-index: -1;
 }
 
 /* ================= WRAPPER ================= */
 .love-wrapper {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
-  gap: clamp(25px, 5vw, 80px);
+  gap: clamp(20px, 5vw, 80px);
   max-width: 1200px;
   margin: auto;
   align-items: center;
-}
-
-/* SOFT GLOW EFFECT */
-.love-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  width: 500px;
-  height: 500px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
-  z-index: -1;
 }
 
 /* ================= IMAGE ================= */
 .love img {
   width: 100%;
   border-radius: 10px;
-  transition: transform 0.6s ease, box-shadow 0.4s ease;
+  transition: 0.5s ease;
 }
 
 .love img:hover {
@@ -90,16 +67,16 @@
 
 .love-left p {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(14px, 1.3vw, 16px);
+  font-size: clamp(13px, 1.2vw, 16px);
   line-height: 1.9;
-  color: #5a5a5a;
+  color: #555;
   max-width: 260px;
   margin-left: auto;
 }
 
 /* ================= CENTER ================= */
 .love-center img {
-  height: clamp(320px, 40vw, 520px);
+  height: clamp(280px, 40vw, 520px);
   object-fit: cover;
 }
 
@@ -108,23 +85,21 @@
   text-align: left;
 }
 
-/* ================= BRAND TITLE ================= */
+/* ================= BRAND ================= */
 .brand-title {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(42px, 5vw, 72px);
+  font-size: clamp(36px, 5vw, 72px);
   color: #2b2b2b;
   margin-bottom: 10px;
-  line-height: 1.1;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* ================= TAG ================= */
+/* TAG */
 .love-right .tag {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(10px, 1vw, 13px);
   letter-spacing: 3px;
   color: #777;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 /* ================= BUTTON ================= */
@@ -135,10 +110,10 @@
 
 .love-btn-wrap button {
   font-family: 'Playfair Display', serif;
-  padding: 14px 36px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(20px, 3vw, 36px);
   border: 1px solid #222;
   background: transparent;
-  font-size: 12px;
+  font-size: clamp(11px, 1.1vw, 13px);
   letter-spacing: 3px;
   cursor: pointer;
   position: relative;
@@ -181,6 +156,13 @@
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
 
+/* ================= LARGE SCREENS ================= */
+@media (min-width: 1200px) {
+  .love-wrapper {
+    max-width: 1300px;
+  }
+}
+
 /* ================= TABLET ================= */
 @media (max-width: 992px) {
   .love-wrapper {
@@ -197,6 +179,10 @@
   .love-left p {
     margin: auto;
   }
+
+  .love-center img {
+    height: 350px;
+  }
 }
 
 /* ================= MOBILE ================= */
@@ -206,7 +192,11 @@
   }
 
   .love-center img {
-    height: 280px;
+    height: 260px;
+  }
+
+  .brand-title {
+    font-size: 40px;
   }
 
   .love-btn-wrap button {
@@ -217,6 +207,10 @@
 /* ================= SMALL MOBILE ================= */
 @media (max-width: 400px) {
   .brand-title {
-    font-size: 38px;
+    font-size: 32px;
+  }
+
+  .love-left p {
+    font-size: 13px;
   }
 }

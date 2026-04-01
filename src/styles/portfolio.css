@@ -1,3 +1,13 @@
+/* ================= FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ================= SECTION ================= */
 .section {
   position: relative;
@@ -8,23 +18,24 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 100px 20px;
+  padding: clamp(80px, 10vw, 120px) 20px;
 }
 
-/* ================= TITLE ================= */
+/* ================= HEADER ================= */
 .portfolio-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: clamp(30px, 5vw, 60px);
   z-index: 2;
 }
 
 .portfolio-header h2 {
-  font-size: clamp(28px, 4vw, 48px);
-  letter-spacing: 6px;
-  font-weight: 300;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(40px, 5vw, 70px);
+  color: #2b2b2b;
 }
 
 .portfolio-header p {
+  font-family: 'Playfair Display', serif;
   font-size: clamp(10px, 1vw, 14px);
   letter-spacing: 3px;
   color: #888;
@@ -39,7 +50,6 @@
   gap: clamp(20px, 5vw, 80px);
   width: 100%;
   max-width: 1400px;
-  z-index: 2;
 }
 
 /* ================= IMAGE ================= */
@@ -47,35 +57,33 @@
   width: clamp(220px, 28vw, 450px);
   height: clamp(300px, 38vw, 600px);
   object-fit: cover;
-  transition: all 0.8s ease;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: all 0.6s ease;
 }
 
-/* ================= CENTER ================= */
+/* CENTER IMAGE */
 .center {
   transform: scale(1);
   opacity: 1;
   z-index: 3;
 }
 
-/* ================= SIDE ================= */
+/* SIDE IMAGES */
 .side {
   transform: scale(0.85);
-  opacity: 0.35;
+  opacity: 0.4;
   filter: grayscale(100%);
 }
 
-/* LEFT */
 .left-img {
   transform: translateX(-30px) scale(0.85);
 }
 
-/* RIGHT */
 .right-img {
   transform: translateX(30px) scale(0.85);
 }
 
-/* ================= HOVER ================= */
+/* HOVER EFFECT */
 .portfolio-track img:hover {
   transform: scale(1.05);
 }
@@ -95,12 +103,10 @@
   z-index: 5;
 }
 
-/* LEFT */
 .nav-text.left {
   left: clamp(10px, 4vw, 60px);
 }
 
-/* RIGHT */
 .nav-text.right {
   right: clamp(10px, 4vw, 60px);
 }
@@ -113,7 +119,6 @@
   transition: 0.3s ease;
 }
 
-/* HOVER */
 .nav-text:hover {
   color: #000;
 }
@@ -123,25 +128,8 @@
   background: #000;
 }
 
-/* ================= BACKGROUND ================= */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  
-  background-size: cover;
-  background-position: center;
-  opacity: 0.05;
-  filter: blur(8px);
-  z-index: 0;
-}
-
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {
-  .portfolio-track {
-    gap: 30px;
-  }
-
   .portfolio-track img {
     width: 260px;
     height: 360px;
@@ -151,7 +139,7 @@
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .section {
-    padding: 80px 15px;
+    padding: 70px 15px;
   }
 
   .portfolio-track {
@@ -169,37 +157,24 @@
     display: none;
   }
 
-  /* nav becomes buttons */
+  /* nav becomes inline */
   .nav-text {
     position: static;
     transform: none;
     margin: 10px;
     justify-content: center;
   }
-
-  .nav-text.left,
-  .nav-text.right {
-    display: inline-flex;
-  }
 }
 
 /* ================= SMALL MOBILE ================= */
 @media (max-width: 480px) {
   .portfolio-header h2 {
-    letter-spacing: 3px;
-  }
-
-  .portfolio-header p {
-    letter-spacing: 2px;
+    font-size: 36px;
   }
 }
 
 /* ================= ULTRA LARGE ================= */
 @media (min-width: 1600px) {
-  .portfolio-track {
-    max-width: 1600px;
-  }
-
   .portfolio-track img {
     width: 500px;
     height: 650px;
