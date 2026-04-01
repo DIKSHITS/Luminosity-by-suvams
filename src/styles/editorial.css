@@ -30,7 +30,7 @@
 
 /* ================= HEADING ================= */
 .editorial-script {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Great Vibes', cursive; /* SCRIPT */
   font-size: clamp(42px, 6vw, 90px);
   color: #2b2b2b;
   margin-bottom: clamp(20px, 3vw, 30px);
@@ -40,7 +40,15 @@
   text-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-
+/* NORMAL FONT PART IN HEADING */
+.editorial-script span {
+  font-family: 'Playfair Display', serif; /* NORMAL */
+  font-style: normal;
+  font-size: 0.6em;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
 /* ================= PARAGRAPH ================= */
 .editorial-text {
@@ -54,7 +62,7 @@
   letter-spacing: 0.3px;
 }
 
-/* SCRIPT WORD */
+/* SCRIPT WORD INSIDE TEXT */
 .editorial-text span {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(22px, 2.5vw, 34px);
@@ -109,9 +117,9 @@
     line-height: 1.3;
   }
 
-  .first-letter {
-    font-size: 2.2em;
-    transform: translateY(6px);
+  .editorial-script span {
+    font-size: 0.7em;
+    letter-spacing: 2px;
   }
 
   .editorial-text {
@@ -131,8 +139,8 @@
     font-size: 34px;
   }
 
-  .first-letter {
-    font-size: 2em;
+  .editorial-script span {
+    font-size: 0.75em;
   }
 }
 

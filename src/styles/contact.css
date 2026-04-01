@@ -15,24 +15,28 @@
   text-align: center;
 }
 
-/* ================= CURSIVE TEXT (EXCEPT FORM) ================= */
-.contact-header h1,
-.contact-header p,
-.contact h3 {
-  font-family: 'Great Vibes', cursive;
-}
-
 /* ================= HEADER ================= */
 .contact-header {
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* ✅ ONLY HEADING SCRIPT */
 .contact-header h1 {
+  font-family: 'Great Vibes', cursive;
   font-size: clamp(50px, 7vw, 110px);
   color: #2b2b2b;
   margin-bottom: 20px;
   font-weight: 400;
+}
+
+/* ✅ EVERYTHING ELSE NORMAL */
+.contact-header p,
+.contact h3,
+input,
+textarea,
+button {
+  font-family: 'Inter', sans-serif;
 }
 
 /* PARAGRAPH */
@@ -65,13 +69,6 @@
   display: flex;
   gap: clamp(15px, 3vw, 30px);
   margin-bottom: clamp(20px, 3vw, 30px);
-}
-
-/* ================= NORMAL FONT FOR FORM ================= */
-input,
-textarea,
-button {
-  font-family: 'Inter', sans-serif; /* 👈 NORMAL FONT */
 }
 
 /* INPUT */

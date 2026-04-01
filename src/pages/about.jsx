@@ -29,9 +29,6 @@ const About = () => {
 
       {/* INTRO */}
       <div className="about-intro fade-in delay-1">
-        <p className="fancy-text">
-          Luminosity by Suvam is built on a simple idea—
-        </p>
         <p className="fancy-sub">
           capturing moments as they truly are.
         </p>
