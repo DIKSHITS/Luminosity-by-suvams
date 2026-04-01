@@ -2,7 +2,7 @@
 .feedback {
   position: relative;
   background: #f5f2ed;
-  padding: 120px 20px;
+  padding: clamp(60px, 8vw, 120px) 20px;
   overflow: hidden;
 }
 
@@ -12,34 +12,35 @@
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
-  font-size: clamp(120px, 18vw, 220px);
+  font-size: clamp(100px, 15vw, 220px);
   color: rgba(0, 0, 0, 0.05);
   font-weight: 300;
   z-index: 0;
+  pointer-events: none;
 }
 
 /* ================= WRAPPER ================= */
 .feedback-wrapper {
   position: relative;
   z-index: 2;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  gap: clamp(30px, 6vw, 80px);
   align-items: center;
 }
 
 /* ================= IMAGE ================= */
 .feedback-img {
-  width: 85%;
+  width: 100%;
 }
 
 .feedback-img img {
-  width: 85%;
-  height: 450px;
+  width: 100%;
+  height: clamp(250px, 35vw, 450px);
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* ================= TEXT ================= */
@@ -48,21 +49,21 @@
 }
 
 .small-title {
-  font-size: 11px;
+  font-size: clamp(10px, 1vw, 12px);
   letter-spacing: 3px;
   color: #888;
   margin-bottom: 20px;
 }
 
 .main-text {
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 16px);
   line-height: 1.9;
   color: #444;
   margin-bottom: 25px;
 }
 
 .author {
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 13px);
   letter-spacing: 2px;
   color: #777;
 }
@@ -70,10 +71,10 @@
 /* ================= NEXT BUTTON ================= */
 .next-btn {
   position: absolute;
-  right: 30px;
+  right: clamp(10px, 2vw, 30px);
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: clamp(22px, 3vw, 30px);
   cursor: pointer;
   z-index: 3;
   transition: 0.3s;
@@ -99,31 +100,29 @@
   }
 }
 
+/* ================= LARGE SCREENS ================= */
+@media (min-width: 1400px) {
+  .feedback-wrapper {
+    max-width: 1300px;
+  }
+}
+
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {
   .feedback-wrapper {
-    gap: 50px;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .feedback-img img {
-    height: 350px;
+  .feedback-text {
+    max-width: 100%;
   }
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .feedback {
-    padding: 80px 20px;
-  }
-
   .feedback-wrapper {
     grid-template-columns: 1fr;
-    gap: 40px;
     text-align: center;
-  }
-
-  .feedback-img img {
-    height: 280px;
   }
 
   .feedback-text {
@@ -131,12 +130,23 @@
   }
 
   .bg-number {
-    font-size: 100px;
+    font-size: 80px;
     right: 10px;
   }
 
   .next-btn {
     position: static;
     margin-top: 20px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .bg-number {
+    font-size: 60px;
+  }
+
+  .main-text {
+    line-height: 1.7;
   }
 }
