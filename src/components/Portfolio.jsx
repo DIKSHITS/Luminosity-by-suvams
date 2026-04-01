@@ -9,7 +9,6 @@ import img16 from "../assets/hero/img16.jpg";
 import img17 from "../assets/hero/img17.jpg";
 import img18 from "../assets/hero/img18.jpg";
 
-import img20 from "../assets/hero/img20.jpg";
 import img21 from "../assets/hero/img21.jpg";
 import img22 from "../assets/hero/img22.jpg";
 
@@ -26,7 +25,7 @@ const images = [
   img17,
   img18,
   
-  img20,
+  
   img21,
   img22,
   
