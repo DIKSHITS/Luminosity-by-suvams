@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 /* ================= LOGO ================= */
@@ -17,13 +18,14 @@
 }
 
 .logo {
-  width: clamp(140px, 18vw, 260px);  /* 🔥 better scaling balance */
-  max-width: 90%;                    /* prevent overflow on small screens */
+  width: clamp(140px, 18vw, 260px);
+  max-width: 90%;
   height: auto;
   object-fit: contain;
   filter: brightness(0.95);
   transition: 0.3s ease;
 }
+
 .logo:hover {
   transform: scale(1.05);
 }
@@ -44,6 +46,9 @@
   height: 600px;
   margin: 0 auto;
   left: -165px;
+
+  /* key for scaling */
+  transform-origin: top center;
 }
 
 /* ================= COMMON ================= */
@@ -158,7 +163,7 @@
 .delay-4 { animation-delay: .8s; }
 .delay-5 { animation-delay: 1s; }
 
-/* SLIDE TRANSITION */
+/* SLIDE */
 .slide-transition {
   animation: slideFade 1s ease;
 }
@@ -174,6 +179,55 @@
   }
 }
 
+/* ================= RESPONSIVE (SCALING ONLY) ================= */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .collage {
+    transform: scale(0.9);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .collage {
+    transform: scale(0.75);
+    height: auto;
+    margin-top: 40px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 768px) {
+  .collage {
+    transform: scale(0.6);
+    margin-top: 40px;
+  }
+}
+
+
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .collage {
+    transform: scale(0.42);
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+}
+
+/* Safety */
+body {
+  overflow-x: hidden;
+}  
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .hero {
@@ -211,7 +265,7 @@
     display: none;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 300px) {
   .logo {
     width: 120px;
   }
