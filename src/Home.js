@@ -8,6 +8,7 @@ import Feedback from "./components/Feedback";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <FAQ />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 };

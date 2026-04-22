@@ -38,9 +38,28 @@
   letter-spacing: 1px;
 }
 
+.whatsapp-contact {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: #3f3f3f;
+}
+
+.whatsapp-contact a {
+  color: #128c7e;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+
+.whatsapp-contact a:hover {
+  border-bottom-color: #128c7e;
+}
+
 /* ✅ EVERYTHING ELSE NORMAL */
 .contact-header p,
 .contact h3,
+.whatsapp-contact,
 input,
 textarea,
 button {
