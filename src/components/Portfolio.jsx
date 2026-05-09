@@ -63,13 +63,11 @@ const Portfolio = () => {
 
       {/* NAVIGATION */}
       <div className="nav-text left" onClick={prev}>
-        <span className="line"></span>
-        <span>Prev</span>
+        Prev
       </div>
 
       <div className="nav-text right" onClick={next}>
-        <span>Next</span>
-        <span className="line"></span>
+        Next
       </div>
 
       {/* SLIDER */}

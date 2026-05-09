@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import "../styles/whatsappFloat.css";
 
-const WHATSAPP_LINK = "https://wa.me/919123938200";
+const WHATSAPP_LINK = "https://wa.me/6289688420";
 
 const WhatsAppFloat = () => {
   return (

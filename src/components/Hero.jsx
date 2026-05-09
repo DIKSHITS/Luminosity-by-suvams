@@ -1,67 +1,60 @@
 import React, { useEffect, useState } from "react";
 import "../styles/hero.css";
 
-/* IMPORT YOUR LOGO */
 import logo from "../assets/hero/logo.png";
 
-/* IMPORT YOUR IMAGES */
 import img1 from "../assets/hero/img1.jpg";
 import img2 from "../assets/hero/img2.jpg";
 import img3 from "../assets/hero/img3.jpg";
-import img4 from "../assets/hero/img4.jpg";
-import img5 from "../assets/hero/img5.jpg";
 
-/* SINGLE COLLECTION */
-const initialImages = [img1, img2, img3, img4, img5];
+const images = [img1, img2, img3];
 
 const Hero = () => {
-  const [images, setImages] = useState(initialImages);
+  const [active, setActive] = useState(0);
 
-  /* AUTO SLIDE (ROTATE IMAGES) */
   useEffect(() => {
     const interval = setInterval(() => {
-      setImages((prev) => {
-        const newArr = [...prev];
-        const first = newArr.shift(); // remove first
-        newArr.push(first); // add to end
-        return newArr;
-      });
-    }, 4000); // change every 4 sec
+      setActive((prev) => (prev + 1) % images.length);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="hero" className="section hero">
-      <div className="hero-content">
+    <section className="hero">
+      {/* Top Center Logo */}
+      <div className="hero-logo">
+        <img src={logo} alt="logo" className="logo" />
+      </div>
 
-        {/* LOGO */}
-        <div className="logo-wrapper fade-down">
-          <img src={logo} alt="Logo" className="logo" />
+      {/* Left Content */}
+      <div className="hero-left">
+        <span className="hero-tag"></span>
+
+        <h1>
+          Redefine <br /> Your Style
+        </h1>
+
+        <p>
+          Premium fashion crafted with elegance, confidence and timeless
+          identity.
+        </p>
+
+        <button className="hero-btn">Explore Collection</button>
+      </div>
+
+      {/* Right Content */}
+      <div className="hero-right">
+        <div className="main-image">
+          <img src={images[active]} alt="" />
         </div>
 
-        {/* COLLAGE */}
-        <div className="collage">
+        <div className="floating-card top-card">
+          <img src={images[(active + 1) % images.length]} alt="" />
+        </div>
 
-          {/* LEFT */}
-          <div className="img left-img fade-up delay-1">
-            <img src={images[0]} alt="" />
-          </div>
-
-          {/* CENTER */}
-          <img src={images[1]} className="img center-img fade-up delay-2" alt="" />
-
-          {/* TOP RIGHT */}
-          <img src={images[2]} className="img top-right fade-up delay-3" alt="" />
-
-          {/* RIGHT TALL */}
-          <div className="img right-tall fade-up delay-4">
-            <img src={images[3]} alt="" />
-          </div>
-
-          {/* BOTTOM RIGHT */}
-          <img src={images[4]} className="img bottom-right fade-up delay-5" alt="" />
-
+        <div className="floating-card bottom-card">
+          <img src={images[(active + 2) % images.length]} alt="" />
         </div>
       </div>
     </section>
