@@ -23,7 +23,7 @@ body {
   align-items: center;
 
   padding: 15px clamp(20px, 5vw, 60px);
-  background: #eae6e1;
+  background: #ffff;
   z-index: 1000;
 }
 

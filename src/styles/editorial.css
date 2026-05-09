@@ -12,7 +12,7 @@
 .editorial {
   width: 100%;
   min-height: 100vh;
-  background: whitesmoke;
+  background: #ffff;
   display: flex;
   justify-content: center;
   align-items: center;

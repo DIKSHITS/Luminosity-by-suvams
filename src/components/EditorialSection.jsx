@@ -15,7 +15,7 @@ const EditorialSection = () => {
         <p className="editorial-text">
           We’ll create refined editorial imagery that celebrates every heartfelt emotion,
           every meaningful detail, and all those perfectly imperfect in-between moments.
-          Your legacy of cherished memories <span>begins here.</span>
+          Your legacy of cherished memories begins here.
         </p>
 
         {/* Button */}

@@ -29,16 +29,13 @@ const Hero = () => {
 
       {/* Left Content */}
       <div className="hero-left">
-        <span className="hero-tag"></span>
+        
 
         <h1>
           Redefine <br /> Your Style
         </h1>
 
-        <p>
-          Premium fashion crafted with elegance, confidence and timeless
-          identity.
-        </p>
+       
 
         <button className="hero-btn">Explore Collection</button>
       </div>

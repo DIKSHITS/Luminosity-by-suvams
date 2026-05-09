@@ -1,7 +1,7 @@
 /* ================= SECTION ================= */
 .feedback {
   position: relative;
-  background: #f5f2ed;
+  background: #ffff;
   padding: clamp(60px, 8vw, 120px) 20px;
   overflow: hidden;
 }
