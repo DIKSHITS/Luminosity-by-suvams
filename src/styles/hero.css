@@ -1,73 +1,67 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100%;
+body,
+html {
   overflow-x: hidden;
-  font-family: sans-serif;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO */
 .hero {
   width: 100%;
-  padding: 110px 6% 60px;
+  min-height: 100vh;
+  padding: 140px 6% 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
   position: relative;
-  background: #fff;
+  background: linear-gradient(
+    135deg,
+    #ffff 0%,
+    #ffff 50%,
+    #ffff 100%
+  );
 }
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 .hero-logo {
   position: absolute;
-  top: 10px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
 }
 
 .logo {
-  width: clamp(90px, 10vw, 170px);
+  width: clamp(120px, 12vw, 180px);
   height: auto;
-  display: block;
 }
 
-/* =========================
-   LEFT CONTENT
-========================= */
+/* LEFT */
 .hero-left {
   flex: 1;
-  min-width: 280px;
-  max-width: 550px;
+  min-width: 300px;
 }
 
 .hero-tag {
   display: inline-block;
   padding: 10px 18px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 30px;
-  font-size: clamp(12px, 1.5vw, 15px);
-  margin-bottom: 20px;
+  font-size: clamp(12px, 2vw, 15px);
+  margin-bottom: 25px;
 }
 
 .hero-left h1 {
-  font-size: clamp(2rem, 7vw, 5rem);
-  line-height: 1;
-  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 0.95;
+  margin-bottom: 25px;
   color: #111;
 }
 
@@ -75,8 +69,8 @@ body {
   font-size: clamp(14px, 2vw, 18px);
   line-height: 1.7;
   color: #555;
-  margin-bottom: 25px;
   max-width: 500px;
+  margin-bottom: 30px;
 }
 
 .hero-btn {
@@ -85,60 +79,47 @@ body {
   border-radius: 40px;
   background: #111;
   color: white;
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: 15px;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: 0.4s;
 }
 
 .hero-btn:hover {
   transform: translateY(-4px);
 }
 
-/* =========================
-   RIGHT CONTENT
-========================= */
+/* RIGHT */
 .hero-right {
   flex: 1;
-  min-width: 280px;
-  max-width: 450px;
-  width: 100%;
+  min-width: 300px;
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
-  margin-top: 0;
 }
 
-/* =========================
-   MAIN IMAGE
-========================= */
+/* MAIN IMAGE */
 .main-image {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  border-radius: 25px;
+  width: min(100%, 420px);
+  aspect-ratio: 3/4;
+  border-radius: 28px;
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
 }
 
 .main-image img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* =========================
-   FLOATING CARDS
-========================= */
+/* FLOATING CARDS */
 .floating-card {
   position: absolute;
-  width: clamp(80px, 10vw, 140px);
+  width: clamp(120px, 15vw, 180px);
   aspect-ratio: 4/5;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
   animation: float 5s infinite ease-in-out;
 }
 
@@ -149,61 +130,66 @@ body {
 }
 
 .top-card {
-  top: 5%;
-  left: -20px;
+  top: 8%;
+  left: 0;
 }
 
 .bottom-card {
-  bottom: 5%;
-  right: -20px;
+  bottom: 8%;
+  right: 0;
 }
 
-/* =========================
-   FLOAT ANIMATION
-========================= */
+/* ANIMATION */
 @keyframes float {
   0% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
   50% {
     transform: translateY(-14px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 
-/* =========================
-   TABLET (992px)
-========================= */
+/* LARGE TABLET */
 @media (max-width: 992px) {
   .hero {
-    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    gap: 20px;
-    padding: 100px 20px 40px;
-  }
-
-  .hero-left {
-    max-width: 100%;
+    gap: 40px;
   }
 
   .hero-left p {
-    margin: auto;
-    margin-bottom: 20px;
+    margin-inline: auto;
   }
 
   .hero-right {
-    margin-top: 10px;
-    max-width: 380px;
+    width: 100%;
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 20px 40px;
+    flex-direction: column;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-right {
+    width: 100%;
   }
 
   .main-image {
-    max-width: 300px;
+    width: min(100%, 320px);
   }
 
   .floating-card {
-    width: 90px;
+    width: 110px;
   }
 
   .top-card {
@@ -215,60 +201,14 @@ body {
   }
 }
 
-/* =========================
-   IPAD FIX
-========================= */
-@media only screen and (min-width: 768px) and (max-width: 1366px) {
+/* MOBILE */
+@media (max-width: 576px) {
   .hero {
-    padding: 100px 30px 40px;
-    gap: 20px;
-  }
-
-  .hero-right {
-    max-width: 350px;
-  }
-
-  .main-image {
-    max-width: 280px;
-  }
-
-  .floating-card {
-    width: 80px;
-  }
-}
-
-/* =========================
-   MOBILE (768px)
-========================= */
-@media (max-width: 768px) {
-  .hero {
-    padding: 90px 20px 30px;
-    gap: 20px;
+    padding-top: 110px;
   }
 
   .hero-left h1 {
     font-size: 2.2rem;
-  }
-
-  .main-image {
-    max-width: 260px;
-  }
-
-  .floating-card {
-    width: 75px;
-  }
-}
-
-/* =========================
-   SMALL MOBILE (576px)
-========================= */
-@media (max-width: 576px) {
-  .hero {
-    padding: 80px 15px 25px;
-  }
-
-  .hero-left h1 {
-    font-size: 2rem;
   }
 
   .hero-left p {
@@ -277,11 +217,12 @@ body {
 
   .hero-btn {
     width: 100%;
-    max-width: 220px;
+    max-width: 260px;
   }
 
   .main-image {
-    max-width: 230px;
+    width: 100%;
+    max-width: 280px;
   }
 
   .floating-card {
@@ -289,41 +230,13 @@ body {
   }
 }
 
-/* =========================
-   EXTRA SMALL MOBILE
-========================= */
+/* SMALL MOBILE */
 @media (max-width: 360px) {
   .hero-left h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero-left p {
-    font-size: 13px;
+    font-size: 1.8rem;
   }
 
   .logo {
-    width: 80px;
-  }
-
-  .hero-btn {
-    padding: 12px 18px;
-  }
-
-  .main-image {
-    max-width: 200px;
-  }
-}
-
-/* =========================
-   LARGE DESKTOP
-========================= */
-@media (min-width: 1400px) {
-  .hero {
-    max-width: 1500px;
-    margin: auto;
-  }
-
-  .main-image {
-    max-width: 380px;
+    width: 110px;
   }
 }
