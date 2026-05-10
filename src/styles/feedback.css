@@ -34,12 +34,16 @@
 /* ================= IMAGE ================= */
 .feedback-img {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .feedback-img img {
   width: 100%;
-  height: clamp(250px, 35vw, 450px);
-  object-fit: cover;
+  height: auto;
+  max-height: clamp(250px, 35vw, 450px);
+  object-fit: contain;
+  background: #fff;
   border-radius: 6px;
 }
 
