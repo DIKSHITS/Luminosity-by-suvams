@@ -1,48 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/navbar.css";
+import logo from "../assets/hero/logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
-  const handleClick = (event, id) => {
-    event.preventDefault();
-    const target = document.getElementById(id);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 50);
+    };
 
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    } else {
-      // Fallback for routes where sections are not mounted (e.g. /about)
-      window.location.href = `/#${id}`;
-    }
+    window.addEventListener("scroll", handleScroll);
 
-    setOpen(false); // ✅ CLOSE MENU AFTER CLICK
-  };
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${scroll ? "scrolled" : ""}`}>
 
-      {/* LEFT */}
-      <div className="nav-left" onClick={() => setOpen(!open)}>
-        <div className={`menu-icon ${open ? "active" : ""}`}>
+      <div className="nav-left">
+        <div
+          className={`menu-icon ${open ? "active" : ""}`}
+          onClick={() => setOpen(!open)}
+        >
           <span></span>
           <span></span>
         </div>
       </div>
 
-      {/* CENTER */}
-      <nav className={`nav-center ${open ? "show" : ""}`}>
-        <a href="#hero" onClick={(event) => handleClick(event, "hero")}>HOME</a>
-        <a href="#lovestories" onClick={(event) => handleClick(event, "lovestories")}>ABOUT</a>
-        <a href="#portfolio" onClick={(event) => handleClick(event, "portfolio")}>OUR CRAFT</a>
-        <a href="#feedback" onClick={(event) => handleClick(event, "feedback")}>FEEDBACK</a>
-        <a href="#faq" onClick={(event) => handleClick(event, "faq")}>FAQ</a>
-        <a href="#contact" onClick={(event) => handleClick(event, "contact")}>CONTACT</a>
-      </nav>
+      <div className="nav-links left-links">
+        <a href="#hero">HOME</a>
+        <a href="#lovestories">ABOUT</a>
+        <a href="#portfolio">OUR CRAFT</a>
+      </div>
 
-      {/* RIGHT */}
-      <div className="nav-right"></div>
+      <div className="nav-logo">
+        <img src={logo} alt="logo"/>
+      </div>
+
+      <div className="nav-links right-links">
+        <a href="#feedback">FEEDBACK</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+
+      <div className="nav-right">
+        <button className="book-btn">
+          BOOK CONSULTATION
+        </button>
+      </div>
 
     </header>
   );
