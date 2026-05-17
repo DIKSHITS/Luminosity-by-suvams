@@ -39,8 +39,8 @@ const Hero = () => {
        
 
         <h1>
-          Redefine <br />
-          Your Style
+        Crafted<br />   
+        Captured cherished
         </h1>
 
         <p>
