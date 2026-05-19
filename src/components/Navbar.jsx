@@ -32,7 +32,7 @@ const Navbar = () => {
       </div>
 
       <div className="nav-links left-links">
-        <a href="#hero">HOME</a>
+        <a href="/">HOME</a>
         <a href="#lovestories">ABOUT</a>
         <a href="#portfolio">OUR CRAFT</a>
       </div>
@@ -43,7 +43,7 @@ const Navbar = () => {
 
       <div className="nav-links right-links">
         <a href="#feedback">FEEDBACK</a>
-        <a href="#faq">FAQ</a>
+        <a href="#FAQ">FAQ</a>
         <a href="#contact">CONTACT</a>
       </div>
 
