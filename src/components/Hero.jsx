@@ -8,46 +8,61 @@ import img3 from "../assets/hero/img30.jpg";
 const images = [img1, img2, img3];
 
 const Hero = () => {
-  const [active, setActive] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % images.length);
-    }, 4000);
+const [active,setActive]=useState(0);
 
-    return () => clearInterval(interval);
-  }, []);
+useEffect(()=>{
 
-  return (
-    <section className="hero">
+const interval=setInterval(()=>{
 
-      {/* Background Full Image */}
-      <div className="hero-bg">
-        <img src={images[active]} alt="Luxury fashion collection showcase" />
-      </div>
+setActive((prev)=>(prev+1)%images.length);
 
-      {/* Overlay */}
-      <div className="overlay" aria-hidden="true"></div>
+},4000);
 
-      {/* Hero Content */}
-      <div className="hero-left">
-        <h1>
-          Crafted<br />   
-          Captured cherished
-        </h1>
+return()=>clearInterval(interval);
 
-        <p>
-          Luxury fashion crafted for your unforgettable moments.
-        </p>
+},[]);
 
-        <button className="hero-btn" aria-label="Explore our luxury fashion collection">
-          Explore Collection →
-        </button>
+return(
 
-      </div>
+<section className="hero">
 
-    </section>
-  );
+<div className="hero-bg">
+
+<img
+src={images[active]}
+alt="Luxury collection"
+/>
+
+</div>
+
+<div className="overlay"></div>
+
+<div className="hero-left">
+
+<span className="hero-tag">
+LUXURY COLLECTION
+</span>
+
+<h1>
+Crafted <br/>
+Captured Cherished
+</h1>
+
+<p>
+Luxury fashion crafted for your unforgettable moments.
+</p>
+
+<button className="hero-btn">
+Explore Collection →
+</button>
+
+</div>
+
+</section>
+
+);
+
 };
 
 export default Hero;
