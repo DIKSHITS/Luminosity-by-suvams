@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/hero.css";
 
-
-
 import img1 from "../assets/hero/img1.jpg";
 import img2 from "../assets/hero/img2.jpg";
 import img3 from "../assets/hero/img30.jpg";
@@ -25,29 +23,24 @@ const Hero = () => {
 
       {/* Background Full Image */}
       <div className="hero-bg">
-        <img src={images[active]} alt="" />
+        <img src={images[active]} alt="Luxury fashion collection showcase" />
       </div>
 
       {/* Overlay */}
-      <div className="overlay"></div>
-
+      <div className="overlay" aria-hidden="true"></div>
 
       {/* Hero Content */}
       <div className="hero-left">
-        
-
-       
-
         <h1>
-        Crafted<br />   
-        Captured cherished
+          Crafted<br />   
+          Captured cherished
         </h1>
 
         <p>
           Luxury fashion crafted for your unforgettable moments.
         </p>
 
-        <button className="hero-btn">
+        <button className="hero-btn" aria-label="Explore our luxury fashion collection">
           Explore Collection →
         </button>
 
