@@ -64,6 +64,14 @@ transition:.4s;
 background:black;
 }
 
+/* MENU ICON ACTIVE (X) */
+.menu-icon.active span:nth-child(1){
+	transform:translateY(7px) rotate(45deg);
+}
+.menu-icon.active span:nth-child(2){
+	transform:translateY(-7px) rotate(-45deg);
+}
+
 /* LEFT */
 
 .left-links{
@@ -242,6 +250,61 @@ width:18px;
 
 .navbar{
 padding:10px 12px;
+}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{
+	position:fixed;
+	top:0;
+	right:0;
+	height:100dvh;
+	width:100%;
+	max-width:420px;
+	background:rgba(0,0,0,0.96);
+	color:white;
+	z-index:9998;
+	transform:translateX(100%);
+	transition:transform .32s ease;
+	display:flex;
+	flex-direction:column;
+	padding:80px 24px 24px 24px;
+}
+
+.mobile-menu.open{
+	transform:translateX(0);
+}
+
+.mobile-nav{
+	display:flex;
+	flex-direction:column;
+	gap:18px;
+	margin-bottom:28px;
+}
+
+.mobile-nav a{
+	color:white;
+	text-decoration:none;
+	font-size:18px;
+	font-weight:600;
+}
+
+.mobile-cta{
+	margin-top:auto;
+	display:flex;
+	justify-content:center;
+}
+
+/* Ensure mobile buttons adapt */
+.mobile-menu .book-btn{
+	width:100%;
+	max-width:360px;
+	padding:12px 18px;
+	border-radius:8px;
+	font-size:14px;
+}
+
+@media(min-width:769px){
+	.mobile-menu{display:none}
 }
 
 .nav-logo img{

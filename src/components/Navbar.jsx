@@ -53,6 +53,29 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile menu overlay */}
+      <div
+        className={`mobile-menu ${open ? "open" : ""}`}
+        aria-hidden={!open}
+      >
+        <nav className="mobile-nav">
+          <a href="/" onClick={() => setOpen(false)}>HOME</a>
+          <a href="#lovestories" onClick={() => setOpen(false)}>ABOUT</a>
+          <a href="#portfolio" onClick={() => setOpen(false)}>OUR CRAFT</a>
+          <a href="#feedback" onClick={() => setOpen(false)}>FEEDBACK</a>
+          <a href="#FAQ" onClick={() => setOpen(false)}>FAQ</a>
+          <a href="#contact" onClick={() => setOpen(false)}>CONTACT</a>
+        </nav>
+
+        <div className="mobile-cta">
+          <button
+            className="book-btn"
+            onClick={() => setOpen(false)}
+          >
+            BOOK CONSULTATION
+          </button>
+        </div>
+      </div>
     </header>
   );
 };
