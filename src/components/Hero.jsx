@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../styles/hero.css";
 
 import img1 from "../assets/hero/img1.jpg";
-import img2 from "../assets/hero/img2.jpg";
 import img3 from "../assets/hero/img30.jpg";
 
-const images = [img1, img2, img3];
+const images = [img1,img3];
 
 const Hero = () => {
 
