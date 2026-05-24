@@ -1,7 +1,7 @@
 /* ================= FOOTER ================= */
 .footer {
-  background: #ffff;
-  padding: 60px 20px;
+  background: #fff;
+  padding: 60px 20px 30px;
   text-align: center;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .footer-icons a {
-  font-size: 18px;
+  font-size: 20px;
   color: #444;
   transition: all 0.3s ease;
 }
@@ -22,20 +22,59 @@
 /* HOVER EFFECT */
 .footer-icons a:hover {
   color: #000;
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.1);
 }
 
 /* ================= LINE ================= */
 .footer-line {
-  width: 60px;
+  width: 70px;
   height: 1px;
   background: #ccc;
   margin: 20px auto;
 }
 
-/* ================= TEXT ================= */
+/* ================= COPYRIGHT TEXT ================= */
 .footer-text {
   font-size: 12px;
   letter-spacing: 2px;
   color: #777;
+  margin-bottom: 10px;
+}
+
+/* ================= DEVELOPER CREDIT ================= */
+.developer-text {
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+.developer-text:hover {
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:768px) {
+  
+  .footer{
+    padding: 45px 15px 25px;
+  }
+
+  .footer-icons{
+    gap: 18px;
+  }
+
+  .footer-icons a{
+    font-size: 18px;
+  }
+
+  .footer-text{
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .developer-text{
+    font-size: 12px;
+  }
 }
