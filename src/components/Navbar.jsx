@@ -20,21 +20,19 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = open ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [open]);
 
+  const closeMenu = () => setOpen(false);
+
   return (
     <>
       <header className={`navbar ${scroll ? "scrolled" : ""}`}>
-        {/* HAMBURGER MENU */}
+        {/* Hamburger */}
 
         <div
           className={`menu-icon ${open ? "active" : ""}`}
@@ -45,15 +43,15 @@ const Navbar = () => {
           <span></span>
         </div>
 
-        {/* LEFT LINKS */}
+        {/* Left Links */}
 
         <div className="nav-links left-links">
-          <Link to="/">HOME</Link>
+       <Link to="/">HOME</Link>
           <a href="#lovestories">ABOUT</a>
           <a href="#portfolio">OUR CRAFT</a>
         </div>
 
-        {/* LOGO */}
+        {/* Logo */}
 
         <div className="nav-logo">
           <Link to="/">
@@ -61,7 +59,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* RIGHT LINKS */}
+        {/* Right Links */}
 
         <div className="nav-links right-links">
           <a href="#feedback">FEEDBACK</a>
@@ -70,37 +68,37 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
 
       <div className={`mobile-menu ${open ? "open" : ""}`}>
         <div className="mobile-nav">
-          <Link to="/" onClick={() => setOpen(false)}>
+          <Link to="/" onClick={closeMenu}>
             HOME
           </Link>
 
-        
-
-          <a href="#about" onClick={() => setOpen(false)}>
+          <a href="#lovestories" onClick={closeMenu}>
             ABOUT
           </a>
 
-          <a href="#craft" onClick={() => setOpen(false)}>
+          <a href="#portfolio" onClick={closeMenu}>
             OUR CRAFT
           </a>
 
-          <a href="#feedback" onClick={() => setOpen(false)}>
+          <a href="#feedback" onClick={closeMenu}>
             FEEDBACK
           </a>
 
-          <a href="#faq" onClick={() => setOpen(false)}>
+          <a href="#faq" onClick={closeMenu}>
             FAQ
           </a>
 
-          <a href="#contact" onClick={() => setOpen(false)}>
+          <a href="#contact" onClick={closeMenu}>
             CONTACT
           </a>
         </div>
       </div>
+
+      {open && <div className="menu-overlay" onClick={closeMenu}></div>}
     </>
   );
 };
