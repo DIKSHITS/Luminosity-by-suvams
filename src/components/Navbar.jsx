@@ -78,9 +78,7 @@ const Navbar = () => {
             HOME
           </Link>
 
-          <Link to="/collections" onClick={() => setOpen(false)}>
-            COLLECTIONS
-          </Link>
+        
 
           <a href="#about" onClick={() => setOpen(false)}>
             ABOUT
