@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../styles/CollectionSection.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -208,17 +207,7 @@ const CollectionSection = () => {
 								allow="autoplay; encrypted-media; picture-in-picture"
 								allowFullScreen
 							/>
-							<div className="collections-video-overlay">
-								<p className="collections-kicker">Curated collection</p>
-								<div className="collections-actions">
-									<Link to="/" className="collections-button">
-										Back to home
-									</Link>
-									<a href="#collections-gallery" className="collections-button secondary">
-										Jump to gallery
-									</a>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 
