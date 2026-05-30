@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/hero.css";
 
 import img1 from "../assets/hero/img1.jpg";
@@ -52,9 +53,9 @@ Captured Cherished
 Luxury fashion crafted for your unforgettable moments.
 </p>
 
-<button className="hero-btn">
+<Link className="hero-btn" to="/collections">
 Explore Collection →
-</button>
+</Link>
 
 </div>
 

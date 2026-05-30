@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import logo from "../assets/hero/logo.png";
 
@@ -43,8 +44,9 @@ onClick={()=>setOpen(!open)}
 <div className="nav-links left-links">
 
 <a href="/">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#craft">OUR CRAFT</a>
+
+<a href="#lovestories">ABOUT</a>
+<a href="#portfolio">OUR CRAFT</a>
 
 </div>
 
@@ -75,6 +77,8 @@ onClick={()=>setOpen(!open)}
 <div className="mobile-nav">
 
 <a href="/" onClick={()=>setOpen(false)}>HOME</a>
+
+<Link to="/collections" onClick={()=>setOpen(false)}>COLLECTIONS</Link>
 
 <a href="#about" onClick={()=>setOpen(false)}>ABOUT</a>
 
