@@ -1,4 +1,6 @@
-/* ================= NAVBAR ================= */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
   position: fixed;
@@ -6,27 +8,30 @@
   left: 0;
   width: 100%;
   height: 90px;
-  background: #f8f8f8;
+
+  background: #f7f7f7;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 70px;
 
   padding: 0 40px;
-  z-index: 1200;
 
+  z-index: 1500;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
   height: 80px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: rgba(247, 247, 247, 0.95);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* ================= LINKS ================= */
+/* =========================
+   LINKS
+========================= */
 
 .nav-links {
   display: flex;
@@ -37,10 +42,13 @@
 .nav-links a {
   text-decoration: none;
   color: #222;
+
   font-size: 13px;
   font-weight: 500;
+
   letter-spacing: 2px;
   text-transform: uppercase;
+
   transition: 0.3s ease;
 }
 
@@ -48,7 +56,9 @@
   opacity: 0.7;
 }
 
-/* ================= LOGO ================= */
+/* =========================
+   LOGO
+========================= */
 
 .nav-logo {
   display: flex;
@@ -57,29 +67,37 @@
 }
 
 .nav-logo img {
-  height: 95px;
+  height: 90px;
   width: auto;
+  display: block;
   object-fit: contain;
 }
 
-/* ================= HAMBURGER ================= */
+/* =========================
+   HAMBURGER
+========================= */
 
 .menu-icon {
   display: none;
+
   width: 32px;
   height: 24px;
+
   position: absolute;
   left: 20px;
+
   cursor: pointer;
-  z-index: 1400;
+  z-index: 2000;
 }
 
 .menu-icon span {
   position: absolute;
   width: 100%;
   height: 2px;
+
   background: #111;
-  border-radius: 20px;
+  border-radius: 50px;
+
   transition: 0.35s ease;
 }
 
@@ -95,6 +113,8 @@
   top: 20px;
 }
 
+/* Active */
+
 .menu-icon.active span:nth-child(1) {
   top: 10px;
   transform: rotate(45deg);
@@ -109,59 +129,101 @@
   transform: rotate(-45deg);
 }
 
-/* ================= OVERLAY ================= */
+/* =========================
+   OVERLAY
+========================= */
 
 .menu-overlay {
   position: fixed;
   inset: 0;
+
   background: rgba(0, 0, 0, 0.25);
-  z-index: 1250;
+
+  z-index: 1600;
 }
 
-/* ================= MOBILE MENU ================= */
+/* =========================
+   MOBILE MENU
+========================= */
 
 .mobile-menu {
   position: fixed;
-  top: 80px;
-  left: -280px;
 
-  width: 260px;
+  top: 80px;
+  left: -100%;
+
+  width: 100%;
   height: calc(100vh - 80px);
 
-  background: #ffffff;
+  background: #f7f7f7;
 
-  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.08);
+  z-index: 1700;
 
-  z-index: 1300;
-
-  transition: left 0.35s ease;
+  transition: all 0.45s ease;
 }
 
 .mobile-menu.open {
   left: 0;
 }
 
+/* =========================
+   MOBILE NAV
+========================= */
+
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  padding: 35px 25px;
-  gap: 22px;
+
+  padding: 55px 40px;
+
+  gap: 35px;
 }
 
 .mobile-nav a {
   text-decoration: none;
+
   color: #222;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  transition: 0.3s ease;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  width: fit-content;
+
+  position: relative;
+
+  transition: all 0.3s ease;
 }
 
 .mobile-nav a:hover {
-  transform: translateX(5px);
+  transform: translateX(8px);
 }
 
-/* ================= MOBILE ================= */
+.mobile-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background: #111;
+
+  transition: width 0.3s ease;
+}
+
+.mobile-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
   .left-links,
@@ -175,16 +237,17 @@
 
   .navbar {
     height: 80px;
-    justify-content: center;
     padding: 0 20px;
   }
 
   .nav-logo img {
-    height: 65px;
+    height: 42px;
   }
 }
 
-/* ================= DESKTOP ================= */
+/* =========================
+   DESKTOP
+========================= */
 
 @media (min-width: 769px) {
   .mobile-menu,
