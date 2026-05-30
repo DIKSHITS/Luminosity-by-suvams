@@ -46,7 +46,7 @@ const Navbar = () => {
         {/* Left Links */}
 
         <div className="nav-links left-links">
-       <Link to="/">HOME</Link>
+<Link to="/">HOME</Link>
           <a href="#lovestories">ABOUT</a>
           <a href="#portfolio">OUR CRAFT</a>
         </div>
