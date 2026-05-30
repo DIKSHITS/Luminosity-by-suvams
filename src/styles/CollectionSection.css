@@ -52,14 +52,12 @@ color: #111827;
 
 .collections-hero {
 	position: relative;
-	min-height: clamp(420px, 68vh, 760px);
 	width: 100%;
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	border-radius: 28px;
+	height: 100vh;
+	min-height: 100vh;
 	overflow: hidden;
-	background: rgba(15, 17, 21, 0.62);
-	backdrop-filter: blur(18px);
-	box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+	border-radius: 0;
+	background: #000;
 }
 
 .collections-kicker {
@@ -107,39 +105,40 @@ color: #111827;
 	position: relative;
 	width: 100%;
 	height: 100%;
-	min-height: min(76vh, 920px);
+	min-height: 100vh;
 	overflow: hidden;
-	border-radius: 28px;
-	background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+	border-radius: 0;
+	background: #000;
 }
 
 .collections-youtube-frame {
-	position: relative;
-}
-
-.collections-youtube-bg {
 	position: absolute;
 	inset: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.collections-youtube-bg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 120vw;
+	height: 120vh;
 	border: 0;
-	transform: scale(1.35);
-	transform-origin: center;
+	transform: translate(-50%, -50%);
 	pointer-events: none;
-	filter: saturate(0.95) contrast(1.02);
 }
 
 .collections-video-overlay {
 	position: absolute;
-	inset: auto 18px 18px 18px;
-	z-index: 2;
-	padding: 18px 20px;
-	border-radius: 20px;
-	background: linear-gradient(180deg, rgba(12, 14, 18, 0.18), rgba(12, 14, 18, 0.84));
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	backdrop-filter: blur(12px);
+	bottom: 50px;
+	left: 50px;
+	z-index: 3;
+	max-width: 650px;
+	background: transparent;
+	border: none;
+	backdrop-filter: none;
+	padding: 0;
 }
 
 
@@ -156,11 +155,9 @@ color: #111827;
 	}
 
 .collections-video-overlay p {
-	margin-top: 10px;
-	font-family: 'Cormorant Garamond', serif;
-	font-size: clamp(1.3rem, 2.4vw, 2rem);
-	line-height: 1.1;
-	color: #f7f3ea;
+	color: #fff;
+	font-size: clamp(1.5rem, 3vw, 3rem);
+	font-weight: 600;
 }
 
 .collections-grid {
@@ -325,10 +322,6 @@ color: #111827;
     grid-row: auto;
   }
 
-  .collections-video-frame {
-    min-height: 450px;
-  }
-
   .collections-video-overlay p {
     font-size: 1.5rem;
   }
@@ -341,6 +334,12 @@ color: #111827;
   .collections-page {
     padding-top: 90px;
   }
+
+	.collections-hero,
+	.collections-video-frame{
+		height:100vh;
+		min-height:100vh;
+	}
 
   .collections-shell {
     padding: 0 15px;
@@ -362,15 +361,15 @@ color: #111827;
     aspect-ratio: 4 / 3;
   }
 
-  .collections-video-frame {
-    min-height: 320px;
-  }
+	.collections-youtube-bg{
+		width:180vw;
+		height:100vh;
+	}
 
   .collections-video-overlay {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    padding: 14px;
+		left:20px;
+		right:20px;
+		bottom:30px;
   }
 
   .collections-video-overlay p {
@@ -387,12 +386,14 @@ color: #111827;
   }
 
   .collections-hero {
-    border-radius: 18px;
-    min-height: 280px;
+		border-radius: 0;
+		height: 100vh;
+		min-height: 100vh;
   }
 
   .collections-video-frame {
-    min-height: 260px;
+		height: 100%;
+		min-height: 100vh;
   }
 
   .collections-video-overlay {
@@ -432,7 +433,8 @@ color: #111827;
   }
 
   .collections-video-frame {
-    min-height: 220px;
+		height: 100%;
+		min-height: 100vh;
   }
 
   .collections-video-overlay p {
