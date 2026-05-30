@@ -166,8 +166,11 @@ color: #f8fafc;
 .collections-grid {
 	width: 100%;
 	display: grid;
+	/* Responsive 12-column layout that gracefully collapses at breakpoints */
 	grid-template-columns: repeat(12, minmax(0, 1fr));
 	gap: 16px;
+	/* allow rows to grow so "tall" cards behave consistently */
+	grid-auto-rows: 1fr;
 }
 
 .collection-card {
@@ -234,6 +237,11 @@ color: #f8fafc;
 	transition: transform 0.6s ease;
 }
 
+/* Ensure images stay centered on narrow viewports */
+.collection-media img {
+	object-position: center center;
+}
+
 .collection-card:hover .collection-media img {
 	transform: scale(1.05);
 }
@@ -288,6 +296,7 @@ color: #f8fafc;
 
 @media (max-width: 1024px) {
 	.collections-grid {
+		/* tablet layout: two columns using the 6-column grid */
 		grid-template-columns: repeat(6, minmax(0, 1fr));
 	}
 
@@ -295,6 +304,17 @@ color: #f8fafc;
 	.collection-card.wide,
 	.collection-card.featured {
 		grid-column: span 3;
+	}
+}
+
+/* Medium-large screens tweak */
+@media (max-width: 1200px) {
+	.collections-shell {
+		padding: 0 clamp(12px, 4vw, 40px);
+	}
+
+	.collections-hero {
+		min-height: clamp(360px, 58vh, 640px);
 	}
 }
 
@@ -307,8 +327,10 @@ color: #f8fafc;
 		padding: 0 16px;
 	}
 
+	/* mobile: single column flow for the gallery */
 	.collections-grid {
 		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
 	}
 
 	.collection-card,
@@ -325,6 +347,14 @@ color: #f8fafc;
 
 	.collections-youtube-bg {
 		transform: scale(1.5);
+	}
+
+	.collection-media {
+		aspect-ratio: 4 / 3;
+	}
+
+	.collection-meta h2 {
+		font-size: clamp(1.1rem, 3.5vw, 1.4rem);
 	}
 }
 
@@ -349,5 +379,13 @@ color: #f8fafc;
 
 	.collections-video-overlay {
 		inset: auto 12px 12px 12px;
+	}
+
+	.collection-meta h2 {
+		font-size: 1.05rem;
+	}
+
+	.collection-meta span {
+		font-size: 0.6rem;
 	}
 }
