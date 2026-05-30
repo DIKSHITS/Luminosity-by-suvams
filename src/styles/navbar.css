@@ -334,3 +334,14 @@ color:#d4af37;
 }
 
 }
+.menu-icon span{
+    width:26px;
+    height:2px;
+    background:white;
+    display:block;
+    transition:.3s;
+}
+
+.navbar.scrolled .menu-icon span{
+    background:black;
+}
