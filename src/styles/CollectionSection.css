@@ -5,11 +5,11 @@
 	min-height: 100vh;
 	overflow: hidden;
 background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.20), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.18), transparent 30%),
-    linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #020617 100%);
+  radial-gradient(circle at top left, rgba(255,255,255,0.9), transparent 40%),
+  radial-gradient(circle at bottom right, rgba(245,245,245,0.8), transparent 40%),
+  linear-gradient(135deg, #ffffff 0%, #fcfcfc 50%, #f8f8f8 100%);
 
-color: #f8fafc;
+color: #111827;
 	padding: clamp(96px, 10vw, 128px) 0 56px;
 }
 
@@ -294,98 +294,153 @@ color: #f8fafc;
 	}
 }
 
+/* ================= LARGE LAPTOP ================= */
+
+@media (max-width: 1400px) {
+
+  .collections-shell {
+    padding: 0 30px;
+  }
+
+  .nav-logo img {
+    height: 80px;
+  }
+
+}
+
+/* ================= TABLET ================= */
+
 @media (max-width: 1024px) {
-	.collections-grid {
-		/* tablet layout: two columns using the 6-column grid */
-		grid-template-columns: repeat(6, minmax(0, 1fr));
-	}
 
-	.collection-card,
-	.collection-card.wide,
-	.collection-card.featured {
-		grid-column: span 3;
-	}
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .collection-card,
+  .collection-card.wide,
+  .collection-card.featured,
+  .collection-card.tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .collections-video-frame {
+    min-height: 450px;
+  }
+
+  .collections-video-overlay p {
+    font-size: 1.5rem;
+  }
 }
 
-/* Medium-large screens tweak */
-@media (max-width: 1200px) {
-	.collections-shell {
-		padding: 0 clamp(12px, 4vw, 40px);
-	}
-
-	.collections-hero {
-		min-height: clamp(360px, 58vh, 640px);
-	}
-}
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-	.collections-page {
-		padding: 20px 0 36px;
-	}
 
-	.collections-shell {
-		padding: 0 16px;
-	}
+  .collections-page {
+    padding-top: 90px;
+  }
 
-	/* mobile: single column flow for the gallery */
-	.collections-grid {
-		grid-template-columns: 1fr;
-		grid-auto-rows: auto;
-	}
+  .collections-shell {
+    padding: 0 15px;
+  }
 
-	.collection-card,
-	.collection-card.wide,
-	.collection-card.featured,
-	.collection-card.tall {
-		grid-column: auto;
-		grid-row: auto;
-	}
+  .collections-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 
-	.collections-video-frame {
-		min-height: 320px;
-	}
+  .collection-card,
+  .collection-card.wide,
+  .collection-card.featured,
+  .collection-card.tall {
+    width: 100%;
+  }
 
-	.collections-youtube-bg {
-		transform: scale(1.5);
-	}
+  .collection-media {
+    aspect-ratio: 4 / 3;
+  }
 
-	.collection-media {
-		aspect-ratio: 4 / 3;
-	}
+  .collections-video-frame {
+    min-height: 320px;
+  }
 
-	.collection-meta h2 {
-		font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-	}
+  .collections-video-overlay {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 14px;
+  }
+
+  .collections-video-overlay p {
+    font-size: 1.2rem;
+  }
 }
 
+/* ================= SMALL MOBILE ================= */
+
 @media (max-width: 480px) {
-	.collections-hero {
-		border-radius: 22px;
-		min-height: 360px;
-	}
 
-	.collections-actions {
-		flex-direction: column;
-		position: absolute;
-		left: 14px;
-		right: 14px;
-		bottom: 14px;
-		z-index: 2;
-	}
+  .collections-shell {
+    padding: 0 12px;
+  }
 
-	.collections-button {
-		width: 100%;
-	}
+  .collections-hero {
+    border-radius: 18px;
+    min-height: 280px;
+  }
 
-	.collections-video-overlay {
-		inset: auto 12px 12px 12px;
-	}
+  .collections-video-frame {
+    min-height: 260px;
+  }
 
-	.collection-meta h2 {
-		font-size: 1.05rem;
-	}
+  .collections-video-overlay {
+    padding: 12px;
+  }
 
-	.collection-meta span {
-		font-size: 0.6rem;
-	}
+  .collections-video-overlay p {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .collection-meta {
+    padding: 14px;
+  }
+
+  .collection-meta h2 {
+    font-size: 1rem;
+  }
+
+  .collection-meta span {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+
+  .collections-button {
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+
+@media (max-width: 360px) {
+
+  .collections-shell {
+    padding: 0 10px;
+  }
+
+  .collections-video-frame {
+    min-height: 220px;
+  }
+
+  .collections-video-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .collection-meta h2 {
+    font-size: 0.9rem;
+  }
+
 }
