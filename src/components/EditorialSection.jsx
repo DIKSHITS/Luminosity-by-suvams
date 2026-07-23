@@ -4,26 +4,35 @@ import "../styles/editorial.css";
 const EditorialSection = () => {
   return (
     <section className="editorial">
+
+      {/* Decorative Glow */}
+      <div className="editorial-glow"></div>
+
       <div className="editorial-content">
 
-        {/* Script Heading with Big A */}
+        <span className="editorial-subtitle">
+          LUXURY WEDDING EXPERIENCE
+        </span>
+
         <h1 className="editorial-script">
-          <span className="first-letter">A</span> modern approach to an age old tradition
+          <span className="first-letter">A</span>
+          modern approach to an age old tradition
         </h1>
 
-        {/* Paragraph */}
         <p className="editorial-text">
-          We’ll create refined editorial imagery that celebrates every heartfelt emotion,
-          every meaningful detail, and all those perfectly imperfect in-between moments.
-          Your legacy of cherished memories begins here.
+          We create refined editorial imagery that celebrates every heartfelt
+          emotion, every meaningful detail, and every beautifully imperfect
+          in-between moment. Every frame is crafted with timeless elegance,
+          cinematic storytelling, and artistic intention, ensuring your wedding
+          memories become an unforgettable legacy for generations to come.
         </p>
 
-        {/* Button */}
         <button className="editorial-btn">
-          LEARN MORE ABOUT EXPERIENCE
+          DISCOVER THE EXPERIENCE
         </button>
 
       </div>
+
     </section>
   );
 };

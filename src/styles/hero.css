@@ -1,330 +1,379 @@
-/* ================= RESET ================= */
+/* =====================================================
+   PREMIUM HERO.CSS
+   Luxury Wedding Photography
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
-body{
-width:100%;
-overflow-x:hidden;
-font-family:Arial, sans-serif;
-}
-
-
-/* ================= HERO ================= */
 
 .hero{
-position:relative;
-width:100%;
-height:100vh;
-min-height:100svh;
-
-overflow:hidden;
-
-display:flex;
-align-items:center;
-
-padding:0 8%;
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+    color:#fff;
 }
 
+/* =============================
+   Background Slider
+============================= */
 
-/* ================= BACKGROUND ================= */
-
-.hero-bg{
-position:absolute;
-top:0;
-
-left:0;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-
-width:100%;
-height:100%;
-
-z-index:1;
-overflow:hidden;
+.hero-slider{
+    position:absolute;
+    inset:0;
 }
 
-.hero-bg img{
-width:100%;
-height:100%;
-
-object-fit:cover;
-object-position:center;
-
-transform:scale(1);
-
-animation:zoom 6s ease infinite alternate;
+.hero-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.2s ease;
+    animation:kenburns 18s linear infinite;
 }
 
-@keyframes zoom{
-
-from{
-transform:scale(1);
+.hero-image.active{
+    opacity:1;
 }
 
-to{
-transform:scale(1.08);
+@keyframes kenburns{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(1.08);
+    }
 }
 
+/* =============================
+   Overlay
+============================= */
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.45) 35%,
+        rgba(0,0,0,.18) 65%,
+        rgba(0,0,0,.08) 100%
+    );
+    z-index:2;
 }
 
+/* =============================
+   Golden Glow
+============================= */
 
-/* ================= OVERLAY ================= */
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-z-index:2;
-
-background:linear-gradient(
-90deg,
-rgba(0,0,0,.82) 15%,
-rgba(0,0,0,.55) 55%,
-rgba(0,0,0,.25) 100%
-);
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    top:-220px;
+    right:-180px;
+    border-radius:50%;
+    background:radial-gradient(rgba(212,175,55,.15),transparent 70%);
+    filter:blur(40px);
+    z-index:2;
 }
 
+/* =============================
+   Hero Content
+============================= */
 
-/* ================= CONTENT ================= */
-
-.hero-left{
-position:relative;
-z-index:5;
-
-width:100%;
-max-width:650px;
-
-color:white;
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    z-index:5;
+    max-width:620px;
+    text-align:left;
 }
 
-
-/* ================= TAG ================= */
+/* =============================
+   Tag
+============================= */
 
 .hero-tag{
-display:inline-block;
-
-margin-bottom:15px;
-
-font-size:14px;
-
-letter-spacing:3px;
-
-font-weight:500;
-
-color:#d4af37;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#D4AF37;
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:25px;
 }
 
-
-/* ================= TITLE ================= */
-
-.hero-left h1{
-font-size:70px;
-
-line-height:1.1;
-
-font-weight:700;
-
-margin-bottom:25px;
+.hero-tag::before{
+    content:"";
+    width:55px;
+    height:2px;
+    background:#D4AF37;
 }
 
-
-/* ================= PARAGRAPH ================= */
-
-.hero-left p{
-font-size:17px;
-
-line-height:1.7;
-
-max-width:550px;
-
-margin-bottom:35px;
-
-color:#f2f2f2;
+.hero-line{
+    width:90px;
+    height:3px;
+    background:linear-gradient(90deg,#D4AF37,#FFE7A0);
+    margin-bottom:30px;
 }
 
+/* =============================
+   Heading
+============================= */
 
-/* ================= BUTTON ================= */
+.hero-content h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(70px,6vw,92px);
+    line-height:.95;
+    letter-spacing:-2px;
+    margin-bottom:30px;
+    text-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+/* =============================
+   Paragraph
+============================= */
+
+.hero-content p{
+    max-width:520px;
+    color:rgba(255,255,255,.82);
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:40px;
+}
+
+/* =============================
+   Buttons
+============================= */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-btn,
+.hero-btn-outline{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:220px;
+    height:58px;
+    border-radius:60px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.35s;
+}
 
 .hero-btn{
-
-padding:15px 35px;
-
-border:none;
-
-outline:none;
-
-border-radius:50px;
-
-background:#d4af37;
-
-color:white;
-
-font-size:15px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.4s;
+    background:linear-gradient(135deg,#D4AF37,#FFE7A0);
+    color:#111;
+    box-shadow:0 20px 45px rgba(212,175,55,.35);
 }
 
 .hero-btn:hover{
-
-background:white;
-
-color:black;
-
-transform:translateY(-4px);
-
+    transform:translateY(-5px);
+    box-shadow:0 30px 60px rgba(212,175,55,.45);
 }
 
-
-/* ================= LARGE LAPTOP ================= */
-
-@media(max-width:1200px){
-
-.hero{
-
-padding:0 6%;
-
+.hero-btn-outline{
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    backdrop-filter:blur(12px);
 }
 
-.hero-left h1{
-
-font-size:60px;
-
+.hero-btn-outline:hover{
+    background:#fff;
+    color:#111;
 }
 
+/* =============================
+   Bottom Area
+============================= */
+
+.hero-bottom{
+    position:absolute;
+    left:8%;
+    right:8%;
+    bottom:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:5;
 }
 
-
-/* ================= TABLET ================= */
-
-@media(max-width:992px){
-
-.hero{
-
-padding:0 5%;
-
+.hero-count{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:18px;
 }
 
-.hero-left{
-
-max-width:600px;
-
+.count-line{
+    width:90px;
+    height:2px;
+    background:rgba(255,255,255,.35);
 }
 
-.hero-left h1{
+/* =============================
+   Scroll Indicator
+============================= */
 
-font-size:50px;
-
+.scroll-indicator{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
 }
 
-.hero-left p{
-
-font-size:15px;
-
+.scroll-indicator span{
+    width:2px;
+    height:70px;
+    background:rgba(255,255,255,.25);
+    position:relative;
+    overflow:hidden;
 }
 
+.scroll-indicator span::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:30px;
+    background:#D4AF37;
+    animation:scroll 2s infinite;
 }
 
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-.hero{
-
-padding:0 5%;
-align-items:center;
+@keyframes scroll{
+    from{
+        top:-30px;
+    }
+    to{
+        top:100%;
+    }
 }
 
-.hero-left{
-
-max-width:100%;
+.scroll-indicator p{
+    font-size:11px;
+    letter-spacing:4px;
+    color:rgba(255,255,255,.75);
 }
 
-.hero-left h1{
+/* =============================
+   Tablet
+============================= */
 
-font-size:40px;
-line-height:1.2;
+@media (max-width:992px){
+
+    .hero{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .hero-content{
+        position:relative;
+        top:auto;
+        left:auto;
+        transform:none;
+        width:90%;
+        margin:auto;
+        text-align:center;
+    }
+
+    .hero-tag{
+        justify-content:center;
+    }
+
+    .hero-line{
+        margin:0 auto 25px;
+    }
+
+    .hero-content p{
+        margin:0 auto 35px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-bottom{
+        left:5%;
+        right:5%;
+    }
 }
 
-.hero-left p{
+/* =============================
+   Mobile
+============================= */
 
-font-size:14px;
-line-height:1.6;
+@media (max-width:768px){
+
+    .hero-content h1{
+        font-size:55px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .hero-btn,
+    .hero-btn-outline{
+        width:100%;
+        max-width:320px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-bottom{
+        bottom:25px;
+    }
 }
 
-.hero-btn{
+/* =============================
+   Small Mobile
+============================= */
 
-padding:14px 30px;
-font-size:14px;
-}
+@media (max-width:480px){
 
-}
+    .hero-content{
+        width:92%;
+    }
 
+    .hero-content h1{
+        font-size:42px;
+    }
 
-/* ================= SMALL MOBILE ================= */
+    .hero-tag{
+        font-size:11px;
+        letter-spacing:3px;
+    }
 
-@media(max-width:480px){
+    .hero-content p{
+        font-size:15px;
+    }
 
-.hero{
+    .hero-count{
+        font-size:16px;
+    }
 
-padding:0 20px;
-}
-
-.hero-tag{
-
-font-size:12px;
-}
-
-.hero-left h1{
-
-font-size:32px;
-}
-
-.hero-left p{
-
-font-size:13px;
-}
-
-.hero-btn{
-
-padding:12px 28px;
-font-size:13px;
-}
-
-}
-
-
-/* ================= EXTRA SMALL DEVICES ================= */
-
-@media(max-width:320px){
-
-.hero-left h1{
-
-font-size:26px;
-}
-
-.hero-left p{
-
-font-size:11px;
-}
-
-.hero-btn{
-
-font-size:11px;
-padding:10px 20px;
-}
-
+    .count-line{
+        width:60px;
+    }
 }

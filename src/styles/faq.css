@@ -1,119 +1,1484 @@
-/* ================= SECTION ================= */
-.section {
-  background: #ffff;
-  padding: 100px 20px;
-  text-align: center;
+/* =====================================================
+   LUXURY FAQ
+   PART 1
+   Background • Layout • Typography
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.faq-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+
+    padding:140px 20px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #120505 0%,
+        #180606 30%,
+        #220808 70%,
+        #100404 100%
+    );
+
 }
 
-/* ================= LINE ================= */
-.line {
-  width: 60%;
-  height: 1px;
-  background: #ddd;
-  margin: 20px auto;
+/* =====================================================
+   GOLD GLOW
+===================================================== */
+
+.faq-glow{
+
+    position:absolute;
+
+    top:-220px;
+
+    left:-180px;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(212,175,55,.10),
+        transparent 72%
+    );
+
+    filter:blur(70px);
+
+    pointer-events:none;
+
 }
 
-/* ================= TITLE ================= */
-.faq-title {
-  font-size: clamp(18px, 2vw, 28px);
-  letter-spacing: 6px;
-  font-weight: 300;
-  color: #444;
+/* =====================================================
+   DECORATIVE CIRCLES
+===================================================== */
+
+.faq-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
 }
 
-/* ================= QUOTE ================= */
-.faq-quote {
-  font-size: clamp(18px, 2.5vw, 28px);
-  font-style: italic;
-  color: #777;
-  margin: 40px 0;
-  font-family: "Playfair Display", serif;
+.circle-one{
+
+    width:380px;
+
+    height:380px;
+
+    right:-170px;
+
+    top:120px;
+
+    border:1px solid rgba(212,175,55,.12);
+
 }
 
-/* ================= CONTENT ================= */
-.faq-content {
-  max-width: 1100px;
-  margin: auto;
-  text-align: left;
+.circle-two{
 
-  /* GRID FOR RESPONSIVENESS */
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
+    width:540px;
+
+    height:540px;
+
+    left:-260px;
+
+    bottom:-180px;
+
+    border:1px solid rgba(255,255,255,.05);
+
 }
 
-/* ================= ITEM ================= */
-.faq-item {
-  padding-bottom: 25px;
-  border-bottom: 1px solid #ddd;
-  transition: 0.3s ease;
+/* =====================================================
+   HEADING
+===================================================== */
+
+.faq-heading{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:0 auto 90px;
+
 }
 
-/* HOVER EFFECT */
-.faq-item:hover {
-  transform: translateY(-3px);
+.faq-heading span{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:#D4AF37;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
 }
 
-/* QUESTION */
-.faq-item h4 {
-  font-size: clamp(14px, 1.2vw, 18px);
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: #333;
+.faq-heading h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(58px,6vw,96px);
+
+    font-weight:500;
+
+    line-height:1.08;
+
+    color:#F8F3EA;
+
+    margin-bottom:28px;
+
 }
 
-/* ANSWER */
-.faq-item p {
-  font-size: clamp(13px, 1vw, 16px);
-  line-height: 1.8;
-  color: #666;
+.faq-divider{
+
+    width:130px;
+
+    height:2px;
+
+    margin:0 auto 35px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #D4AF37,
+        rgba(212,175,55,.12)
+    );
+
 }
 
-/* ================= TABLET ================= */
-@media (min-width: 768px) {
-  .faq-content {
-    grid-template-columns: 1fr 1fr; /* 2 columns */
-  }
+.faq-heading p{
 
-  .line {
-    width: 50%;
-  }
+    max-width:760px;
+
+    margin:auto;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:17px;
+
+    font-weight:300;
+
+    line-height:2;
+
+    color:rgba(255,255,255,.82);
+
 }
 
-/* ================= LARGE LAPTOP ================= */
-@media (min-width: 1024px) {
-  .section {
-    padding: 120px 40px;
-  }
+/* =====================================================
+   WRAPPER
+===================================================== */
 
-  .faq-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
+.faq-wrapper{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
 }
 
-/* ================= DESKTOP / BIG SCREEN ================= */
-@media (min-width: 1440px) {
-  .faq-content {
-    max-width: 1200px;
-  }
+/* =====================================================
+   FAQ CARD
+===================================================== */
 
-  .line {
-    width: 40%;
-  }
+.faq-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.30);
+
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 480px) {
-  .section {
-    padding: 70px 15px;
-  }
+/* =====================================================
+   QUESTION
+===================================================== */
 
-  .faq-content {
-    text-align: left;
-  }
+.faq-question{
 
-  .faq-item {
-    padding-bottom: 20px;
-  }
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+
+    padding:34px 36px;
+
+    text-align:left;
+
+    cursor:pointer;
+
 }
+
+.faq-number{
+
+    min-width:70px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    font-weight:600;
+
+    color:#D4AF37;
+
+}
+
+.faq-question h3{
+
+    flex:1;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    font-weight:500;
+
+    color:#F8F3EA;
+
+    line-height:1.35;
+
+}
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.faq-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(212,175,55,.15);
+
+    color:#D4AF37;
+
+    font-size:28px;
+
+    font-weight:300;
+
+    transition:.45s ease;
+
+}
+
+/* =====================================================
+   ANSWER
+===================================================== */
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    padding:0 36px;
+
+    transition:
+
+        max-height .55s ease,
+
+        opacity .45s ease,
+
+        padding .45s ease;
+
+}
+
+.faq-answer.open{
+
+    max-height:500px;
+
+    opacity:1;
+
+    padding:0 36px 36px 132px;
+
+}
+
+.faq-answer p{
+
+    font-family:"Inter",sans-serif;
+
+    font-size:16px;
+
+    line-height:2;
+
+    color:rgba(255,255,255,.80);
+
+}
+
+/* =====================================================
+   FOOTER CTA
+===================================================== */
+
+.faq-footer{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:760px;
+
+    margin:120px auto 0;
+
+    text-align:center;
+
+}
+
+.faq-footer h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:56px;
+
+    font-weight:500;
+
+    color:#F8F3EA;
+
+    margin-bottom:20px;
+
+}
+
+.faq-footer p{
+
+    font-family:"Inter",sans-serif;
+
+    font-size:17px;
+
+    line-height:2;
+
+    color:rgba(255,255,255,.80);
+
+    margin-bottom:40px;
+
+}
+
+.faq-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 46px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #D4AF37,
+        #FFE7A0
+    );
+
+    color:#111;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.45s ease;
+
+    box-shadow:
+
+        0 18px 45px rgba(212,175,55,.28);
+
+}
+/* =====================================================
+   LUXURY FAQ
+   PART 2
+   Accordion • Hover • Interactions
+===================================================== */
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.faq-card{
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease,
+        background .45s ease;
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.07);
+
+    border-color:rgba(212,175,55,.22);
+
+    box-shadow:
+        0 40px 90px rgba(0,0,0,.45);
+
+}
+
+/* =====================================================
+   ACTIVE CARD
+===================================================== */
+
+.faq-card.active{
+
+    background:rgba(255,255,255,.08);
+
+    border-color:rgba(212,175,55,.30);
+
+    box-shadow:
+        0 45px 100px rgba(0,0,0,.50),
+        0 0 35px rgba(212,175,55,.08);
+
+}
+
+/* =====================================================
+   GOLD TOP LINE
+===================================================== */
+
+.faq-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:0;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        #D4AF37,
+        #FFE7A0
+    );
+
+    transition:.6s ease;
+
+}
+
+.faq-card:hover::before,
+.faq-card.active::before{
+
+    width:100%;
+
+}
+
+/* =====================================================
+   QUESTION HOVER
+===================================================== */
+
+.faq-question{
+
+    position:relative;
+
+    transition:.4s ease;
+
+}
+
+.faq-card:hover .faq-question{
+
+    padding-left:44px;
+
+}
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.faq-number{
+
+    transition:.4s ease;
+
+}
+
+.faq-card:hover .faq-number{
+
+    color:#FFE7A0;
+
+    transform:translateX(6px);
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.faq-question h3{
+
+    transition:.4s ease;
+
+}
+
+.faq-card:hover h3{
+
+    color:#FFE7A0;
+
+}
+
+/* =====================================================
+   PLUS ICON
+===================================================== */
+
+.faq-icon{
+
+    flex-shrink:0;
+
+    transition:
+        transform .45s ease,
+        background .45s ease,
+        color .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+
+}
+
+.faq-card:hover .faq-icon{
+
+    background:
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #FFE7A0
+        );
+
+    color:#111;
+
+    border-color:#D4AF37;
+
+    box-shadow:
+        0 12px 28px rgba(212,175,55,.35);
+
+}
+
+.faq-icon.open{
+
+    transform:rotate(45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #FFE7A0
+        );
+
+    color:#111;
+
+    border-color:#D4AF37;
+
+}
+
+/* =====================================================
+   ANSWER ANIMATION
+===================================================== */
+
+.faq-answer{
+
+    transform-origin:top;
+
+}
+
+.faq-answer.open{
+
+    animation:answerFade .55s ease;
+
+}
+
+@keyframes answerFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   ANSWER TEXT
+===================================================== */
+
+.faq-answer p{
+
+    transition:.35s ease;
+
+}
+
+.faq-card:hover .faq-answer p{
+
+    color:#ffffff;
+
+}
+
+/* =====================================================
+   SHINE EFFECT
+===================================================== */
+
+.faq-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:40%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.9s ease;
+
+    pointer-events:none;
+
+}
+
+.faq-card:hover::after{
+
+    left:170%;
+
+}
+
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.faq-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.faq-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 25px 60px rgba(212,175,55,.40);
+
+}
+
+.faq-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:45%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.faq-btn:hover::before{
+
+    left:160%;
+
+}
+
+/* =====================================================
+   DIVIDER GLOW
+===================================================== */
+
+.faq-divider{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.faq-divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:60px;
+
+    height:100%;
+
+    background:rgba(255,255,255,.5);
+
+    filter:blur(6px);
+
+    animation:dividerShine 5s linear infinite;
+
+}
+
+@keyframes dividerShine{
+
+    from{
+
+        left:-60px;
+
+    }
+
+    to{
+
+        left:160px;
+
+    }
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.faq-footer{
+
+    transition:.4s ease;
+
+}
+
+.faq-footer:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* =====================================================
+   CURSOR
+===================================================== */
+
+.faq-card,
+.faq-question,
+.faq-btn{
+
+    user-select:none;
+
+}
+/* =====================================================
+   LUXURY FAQ
+   PART 3
+   Animations • Responsive • Premium Polish
+===================================================== */
+
+/* =====================================================
+   SECTION APPEAR
+===================================================== */
+
+.faq-section{
+
+    animation:faqFade 1.1s ease;
+
+}
+
+@keyframes faqFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   FLOATING GLOW
+===================================================== */
+
+.faq-glow{
+
+    animation:glowFloat 10s ease-in-out infinite alternate;
+
+}
+
+.circle-one{
+
+    animation:circleFloatOne 12s ease-in-out infinite;
+
+}
+
+.circle-two{
+
+    animation:circleFloatTwo 15s ease-in-out infinite;
+
+}
+
+@keyframes glowFloat{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+@keyframes circleFloatOne{
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+}
+
+@keyframes circleFloatTwo{
+
+    50%{
+
+        transform:translateY(25px);
+
+    }
+
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.faq-heading h2{
+
+    animation:titleFade 1.2s ease;
+
+}
+
+.faq-heading p{
+
+    animation:textFade 1.4s ease;
+
+}
+
+@keyframes titleFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes textFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(55px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   STAGGER CARD ANIMATION
+===================================================== */
+
+.faq-card{
+
+    opacity:0;
+
+    animation:cardReveal .8s ease forwards;
+
+}
+
+.faq-card:nth-child(1){ animation-delay:.08s; }
+.faq-card:nth-child(2){ animation-delay:.16s; }
+.faq-card:nth-child(3){ animation-delay:.24s; }
+.faq-card:nth-child(4){ animation-delay:.32s; }
+.faq-card:nth-child(5){ animation-delay:.40s; }
+.faq-card:nth-child(6){ animation-delay:.48s; }
+.faq-card:nth-child(7){ animation-delay:.56s; }
+.faq-card:nth-child(8){ animation-delay:.64s; }
+.faq-card:nth-child(9){ animation-delay:.72s; }
+.faq-card:nth-child(10){ animation-delay:.80s; }
+.faq-card:nth-child(11){ animation-delay:.88s; }
+.faq-card:nth-child(12){ animation-delay:.96s; }
+
+@keyframes cardReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   ACTIVE CARD GLOW
+===================================================== */
+
+.faq-card.active{
+
+    position:relative;
+
+}
+
+.faq-card.active::after{
+
+    box-shadow:
+
+        0 0 45px rgba(212,175,55,.08);
+
+}
+
+/* =====================================================
+   BUTTON PULSE
+===================================================== */
+
+.faq-btn{
+
+    animation:buttonPulse 5s ease-in-out infinite;
+
+}
+
+@keyframes buttonPulse{
+
+    0%,100%{
+
+        box-shadow:
+
+            0 18px 45px rgba(212,175,55,.28);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 30px 70px rgba(212,175,55,.45);
+
+    }
+
+}
+
+/* =====================================================
+   ICON ANIMATION
+===================================================== */
+
+.faq-icon{
+
+    transition:
+
+        transform .45s ease,
+
+        background .45s ease,
+
+        color .45s ease;
+
+}
+
+.faq-icon.open{
+
+    animation:iconRotate .4s ease;
+
+}
+
+@keyframes iconRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(45deg);
+
+    }
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1200px){
+
+    .faq-section{
+
+        padding:120px 30px;
+
+    }
+
+    .faq-heading{
+
+        margin-bottom:70px;
+
+    }
+
+    .faq-question{
+
+        padding:30px;
+
+    }
+
+    .faq-question h3{
+
+        font-size:26px;
+
+    }
+
+    .faq-answer.open{
+
+        padding:
+
+            0 30px 30px 105px;
+
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+    .faq-section{
+
+        padding:90px 20px;
+
+    }
+
+    .faq-heading{
+
+        margin-bottom:55px;
+
+    }
+
+    .faq-heading h2{
+
+        font-size:50px;
+
+    }
+
+    .faq-heading p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .faq-question{
+
+        gap:18px;
+
+        padding:24px;
+
+        align-items:flex-start;
+
+    }
+
+    .faq-number{
+
+        min-width:46px;
+
+        font-size:24px;
+
+    }
+
+    .faq-question h3{
+
+        font-size:22px;
+
+        line-height:1.5;
+
+    }
+
+    .faq-icon{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:22px;
+
+    }
+
+    .faq-answer.open{
+
+        padding:
+
+            0 24px 24px 24px;
+
+    }
+
+    .faq-footer{
+
+        margin-top:90px;
+
+    }
+
+    .faq-footer h3{
+
+        font-size:42px;
+
+    }
+
+    .faq-footer p{
+
+        font-size:15px;
+
+    }
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width:480px){
+
+    .faq-section{
+
+        padding:70px 16px;
+
+    }
+
+    .faq-heading span{
+
+        font-size:11px;
+
+        letter-spacing:3px;
+
+    }
+
+    .faq-heading h2{
+
+        font-size:36px;
+
+    }
+
+    .faq-question{
+
+        padding:20px;
+
+    }
+
+    .faq-question h3{
+
+        font-size:19px;
+
+    }
+
+    .faq-answer p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .faq-footer h3{
+
+        font-size:34px;
+
+    }
+
+    .faq-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+        padding:18px;
+
+    }
+
+}
+
+/* =====================================================
+   ULTRA WIDE
+===================================================== */
+
+@media (min-width:1600px){
+
+    .faq-wrapper{
+
+        max-width:1400px;
+
+    }
+
+    .faq-heading h2{
+
+        font-size:110px;
+
+    }
+
+    .faq-question h3{
+
+        font-size:34px;
+
+    }
+
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.faq-question:focus-visible,
+
+.faq-btn:focus-visible{
+
+    outline:2px solid #D4AF37;
+
+    outline-offset:5px;
+
+}
+
+/* =====================================================
+   PERFORMANCE
+===================================================== */
+
+.faq-card,
+
+.faq-btn,
+
+.faq-icon{
+
+    will-change:
+
+        transform,
+
+        opacity;
+
+}
+
+.faq-card,
+
+.faq-question,
+
+.faq-btn,
+
+.faq-icon{
+
+    transition:
+
+        transform .45s ease,
+
+        box-shadow .45s ease,
+
+        background .45s ease,
+
+        border-color .45s ease,
+
+        color .45s ease;
+
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/* =====================================================
+   CUSTOM SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#120505;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#D4AF37;
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#C79B24;
+
+}
+
+/* =====================================================
+   END OF FILE
+===================================================== */

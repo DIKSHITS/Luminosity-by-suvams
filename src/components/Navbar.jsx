@@ -1,104 +1,276 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
-import logo from "../assets/hero/logo.png";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [scroll, setScroll] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [scrollProgress, setScrollProgress] = useState(0);
 
+  // ==========================
+  // Navbar Scroll Effect
+  // ==========================
   useEffect(() => {
     const handleScroll = () => {
-      setScroll(window.scrollY > 50);
+      setScrolled(window.scrollY > 60);
+
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress =
+        totalHeight > 0
+          ? (window.scrollY / totalHeight) * 100
+          : 0;
+
+      setScrollProgress(progress);
+
+      const sections = [
+        "home",
+        "about",
+        "portfolio",
+        "feedback",
+        "faq",
+        "contact",
+      ];
+
+      let current = "home";
+
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+
+        if (section) {
+          const top = section.offsetTop - 120;
+          const height = section.offsetHeight;
+
+          if (
+            window.scrollY >= top &&
+            window.scrollY < top + height
+          ) {
+            current = id;
+          }
+        }
+      });
+
+      setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
+    handleScroll();
+
+    return () =>
       window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
+  // ==========================
+  // Disable Body Scroll
+  // ==========================
+
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "auto";
+    document.body.style.overflow = menuOpen
+      ? "hidden"
+      : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [open]);
+  }, [menuOpen]);
 
-  const closeMenu = () => setOpen(false);
+  // ==========================
+  // ESC Close
+  // ==========================
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", close);
+
+    return () =>
+      window.removeEventListener("keydown", close);
+  }, []);
+
+  // ==========================
+  // Close Menu
+  // ==========================
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const menuItems = [
+    { id: "home", label: "HOME" },
+    { id: "about", label: "ABOUT" },
+    { id: "portfolio", label: "OUR CRAFT" },
+    { id: "feedback", label: "FEEDBACK" },
+    { id: "faq", label: "FAQ" },
+    { id: "contact", label: "CONTACT" },
+  ];
 
   return (
     <>
-      <header className={`navbar ${scroll ? "scrolled" : ""}`}>
+      {/* Scroll Progress */}
+
+      <div
+        className="scroll-progress"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
+      {/* ================= NAVBAR ================= */}
+
+      <header
+        className={`navbar ${
+          scrolled ? "navbar-scrolled" : ""
+        }`}
+      >
+        {/* Brand */}
+
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={closeMenu}
+        >
+          <div className="logo-text">
+            <h2>Luminosity</h2>
+            <span>by Suvam</span>
+          </div>
+        </Link>
+
+        {/* Desktop Menu */}
+
+        <nav className="navbar-menu">
+          {menuItems.map((item) => (
+            item.id === "home" ? (
+              <Link
+                key={item.id}
+                to="/"
+                className={
+                  activeSection === item.id
+                    ? "active"
+                    : ""
+                }
+                onClick={closeMenu}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={
+                  activeSection === item.id
+                    ? "active"
+                    : ""
+                }
+              >
+                {item.label}
+              </a>
+            )
+          ))}
+
+          <a
+            href="#contact"
+            className="book-btn"
+          >
+            BOOK NOW
+          </a>
+        </nav>
+
         {/* Hamburger */}
 
-        <div
-          className={`menu-icon ${open ? "active" : ""}`}
-          onClick={() => setOpen(!open)}
+        <button
+          className={`hamburger ${
+            menuOpen ? "active" : ""
+          }`}
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
+          aria-label="Toggle Menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Left Links */}
-
-        <div className="nav-links left-links">
-<Link to="/">HOME</Link>
-          <a href="#lovestories">ABOUT</a>
-          <a href="#portfolio">OUR CRAFT</a>
-        </div>
-
-        {/* Logo */}
-
-        <div className="nav-logo">
-          <Link to="/">
-            <img src={logo} alt="Logo" />
-          </Link>
-        </div>
-
-        {/* Right Links */}
-
-        <div className="nav-links right-links">
-          <a href="#feedback">FEEDBACK</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">CONTACT</a>
-        </div>
+          <span />
+          <span />
+          <span />
+        </button>
       </header>
 
-      {/* Mobile Menu */}
+      {/* ================= MOBILE MENU ================= */}
 
-      <div className={`mobile-menu ${open ? "open" : ""}`}>
-        <div className="mobile-nav">
-          <Link to="/" onClick={closeMenu}>
-            HOME
-          </Link>
+      <div
+        className={`mobile-menu ${
+          menuOpen ? "show" : ""
+        }`}
+      >
+        <div className="mobile-header">
+          <div className="logo-text mobile-logo-text">
+            <h2>Luminosity</h2>
+            <span>by Suvam</span>
+          </div>
 
-          <a href="#lovestories" onClick={closeMenu}>
-            ABOUT
+          <button
+            className="close-menu"
+            onClick={closeMenu}
+          >
+            ×
+          </button>
+        </div>
+
+        <nav className="mobile-links">
+          {menuItems.map((item, index) => (
+            item.id === "home" ? (
+              <Link
+                key={item.id}
+                to="/"
+                onClick={closeMenu}
+                style={{
+                  animationDelay: `${index * 0.08}s`,
+                }}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={closeMenu}
+                style={{
+                  animationDelay: `${index * 0.08}s`,
+                }}
+              >
+                {item.label}
+              </a>
+            )
+          ))}
+
+          <a
+            href="#contact"
+            className="mobile-book"
+            onClick={closeMenu}
+          >
+            BOOK NOW
           </a>
+        </nav>
 
-          <a href="#portfolio" onClick={closeMenu}>
-            OUR CRAFT
-          </a>
+        <div className="mobile-social">
+          <p>Luxury Wedding Photography</p>
 
-          <a href="#feedback" onClick={closeMenu}>
-            FEEDBACK
-          </a>
-
-          <a href="#faq" onClick={closeMenu}>
-            FAQ
-          </a>
-
-          <a href="#contact" onClick={closeMenu}>
-            CONTACT
-          </a>
+          <span>
+            Crafted • Captured • Cherished
+          </span>
         </div>
       </div>
 
-      {open && <div className="menu-overlay" onClick={closeMenu}></div>}
+      {/* Overlay */}
+
+      <div
+        className={`menu-overlay ${
+          menuOpen ? "active" : ""
+        }`}
+        onClick={closeMenu}
+      />
     </>
   );
 };

@@ -1,68 +1,81 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import "../styles/hero.css";
 
 import img1 from "../assets/hero/img1.jpg";
-import img3 from "../assets/hero/img30.jpg";
+import img2 from "../assets/hero/img30.jpg";
 
-const images = [img1,img3];
+const images = [img1, img2];
 
 const Hero = () => {
+  const [active, setActive] = useState(0);
 
-const [active,setActive]=useState(0);
+  useEffect(() => {
+    const slider = setInterval(() => {
+      setActive((prev) => (prev + 1) % images.length);
+    }, 5000);
 
-useEffect(()=>{
+    return () => clearInterval(slider);
+  }, []);
 
-const interval=setInterval(()=>{
+  return (
+    <section className="hero" id="home">
 
-setActive((prev)=>(prev+1)%images.length);
+      {/* ================= Background Images ================= */}
 
-},4000);
+      <div className="hero-slider">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt="Luxury Wedding Photography"
+            className={`hero-image ${
+              active === index ? "active" : ""
+            }`}
+          />
+        ))}
+      </div>
 
-return()=>clearInterval(interval);
+      {/* ================= Overlay ================= */}
 
-},[]);
+      <div className="hero-overlay"></div>
 
-return(
+      {/* ================= Decorative Shapes ================= */}
 
-<section className="hero">
+      <div className="hero-circle hero-circle-1"></div>
+      <div className="hero-circle hero-circle-2"></div>
 
-<div className="hero-bg">
+      {/* ================= Content ================= */}
 
-<img
-src={images[active]}
-alt="Luxury collection"
-/>
 
-</div>
+      {/* ================= Bottom Bar ================= */}
 
-<div className="overlay"></div>
+      <div className="hero-bottom">
 
-<div className="hero-left">
+        <div className="hero-count">
+          <span>
+            {String(active + 1).padStart(2, "0")}
+          </span>
 
-<span className="hero-tag">
-LUXURY COLLECTION
-</span>
+          <div className="count-line"></div>
 
-<h1>
-Crafted <br/>
-Captured Cherished
-</h1>
+          <span>
+            {String(images.length).padStart(2, "0")}
+          </span>
+        </div>
 
-<p>
-Luxury fashion crafted for your unforgettable moments.
-</p>
+        <div className="scroll-indicator">
 
-<Link className="hero-btn" to="/collections">
-Explore Collection →
-</Link>
+          <span></span>
 
-</div>
+          <p>Scroll</p>
 
-</section>
+        </div>
 
-);
+      </div>
 
+    </section>
+  );
 };
 
 export default Hero;

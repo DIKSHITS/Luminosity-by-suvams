@@ -1,214 +1,1452 @@
-/* ================= FONTS ================= */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
+/* =====================================================
+   LUXURY PORTFOLIO
+   PART 1
+   Layout • Background • Typography
+===================================================== */
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ================= SECTION ================= */
-#portfolio.section {
-  position: relative;
-  min-height: 100vh;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: clamp(80px, 10vw, 120px) 20px;
+/* =====================================================
+   SECTION
+===================================================== */
+
+.portfolio-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+
+    padding:140px 20px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #100404 0%,
+        #170606 30%,
+        #210808 70%,
+        #120505 100%
+    );
+
 }
 
-/* ================= HEADER ================= */
-.portfolio-header {
-  text-align: center;
-  margin-bottom: clamp(30px, 5vw, 60px);
-  z-index: 2;
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.portfolio-glow{
+
+    position:absolute;
+
+    top:-280px;
+
+    right:-220px;
+
+    width:760px;
+
+    height:760px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(212,175,55,.12),
+        transparent 70%
+    );
+
+    filter:blur(60px);
+
+    pointer-events:none;
+
 }
 
-/* PREMIUM THIN SCRIPT */
-.portfolio-header h2 {
-  font-family: 'Allura', cursive;
-  font-size: clamp(40px, 5vw, 70px);
-  color: #2b2b2b;
-  font-weight: 400;
-  letter-spacing: 1px;
+/* =====================================================
+   DECORATIVE CIRCLES
+===================================================== */
+
+.portfolio-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
 }
 
-.portfolio-header p {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(10px, 1vw, 14px);
-  letter-spacing: 3px;
-  color: #666;
-  margin-top: 10px;
+.circle-one{
+
+    width:380px;
+
+    height:380px;
+
+    left:-190px;
+
+    top:120px;
+
+    border:1px solid rgba(212,175,55,.12);
+
 }
 
-/* ================= TRACK ================= */
-.portfolio-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(20px, 5vw, 80px);
-  width: 100%;
-  max-width: 1400px;
+.circle-two{
+
+    width:520px;
+
+    height:520px;
+
+    right:-260px;
+
+    bottom:-200px;
+
+    border:1px solid rgba(255,255,255,.05);
+
 }
 
-/* ================= IMAGE ================= */
-.portfolio-track img {
-  width: clamp(220px, 28vw, 450px);
-  height: clamp(300px, 38vw, 600px);
-  object-fit: cover;
-  border-radius: 12px;
-  transition: all 0.6s ease;
+/* =====================================================
+   HEADING
+===================================================== */
+
+.portfolio-heading{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:900px;
+
+    margin:0 auto 90px;
+
+    text-align:center;
+
 }
 
-/* CENTER IMAGE */
-.center {
-  transform: scale(1);
-  opacity: 1;
-  z-index: 3;
+/* SMALL TITLE */
+
+.portfolio-heading span{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
 }
 
-/* SIDE IMAGES */
-.side {
-  transform: scale(0.85);
-  opacity: 0.4;
-  filter: grayscale(100%);
+/* MAIN TITLE */
+
+.portfolio-heading h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(58px,6vw,95px);
+
+    font-weight:500;
+
+    line-height:1.08;
+
+    color:#F8F3EA;
+
+    margin-bottom:28px;
+
 }
 
-.left-img {
-  transform: translateX(-30px) scale(0.85);
+/* GOLD DIVIDER */
+
+.portfolio-line{
+
+    width:130px;
+
+    height:2px;
+
+    margin:0 auto 35px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #D4AF37,
+        rgba(212,175,55,.15)
+    );
+
 }
 
-.right-img {
-  transform: translateX(30px) scale(0.85);
+/* DESCRIPTION */
+
+.portfolio-heading p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.80);
+
+    font-family:"Inter",sans-serif;
+
+    font-size:17px;
+
+    font-weight:300;
+
+    line-height:2;
+
 }
 
-/* HOVER EFFECT */
-.portfolio-track img:hover {
-  transform: scale(1.05);
+/* =====================================================
+   SLIDER CONTAINER
+===================================================== */
+
+.portfolio-slider{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    max-width:1450px;
+
+    margin:auto;
+
 }
 
-/* ================= NAV ================= */
-.nav-text {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  cursor: pointer;
-  color: #ffffff;
-  z-index: 5;
-  padding: 12px 20px;
-  background: rgba(43, 43, 43, 0.85);
-  border-radius: 50px;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(170, 170, 170, 0.3);
-  backdrop-filter: blur(10px);
-  font-weight: 500;
-  text-transform: uppercase;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+/* =====================================================
+   GALLERY CARD
+===================================================== */
+
+.gallery-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
 }
 
-.nav-text.left {
-  left: clamp(10px, 4vw, 60px);
+/* SIDE CARD */
+
+.side-card{
+
+    width:320px;
+
+    height:520px;
+
+    opacity:.35;
+
+    transform:scale(.88);
+
 }
 
-.nav-text.right {
-  right: clamp(10px, 4vw, 60px);
+/* CENTER CARD */
+
+.active-card{
+
+    width:560px;
+
+    height:720px;
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.45);
+
 }
 
-/* ARROW ICON */
-.nav-text::before {
-  content: '';
-  width: 0;
-  height: 0;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.gallery-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.7s ease;
+
 }
 
-.nav-text.left::before {
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-right: 6px solid #ffffff;
-  margin-right: 8px;
+.gallery-card:hover img{
+
+    transform:scale(1.08);
+
 }
 
-.nav-text.right::before {
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 6px solid #ffffff;
-  margin-left: 8px;
-  order: 2;
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.gallery-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.70),
+        rgba(0,0,0,.05)
+    );
+
+    z-index:1;
+
 }
 
-/* HOVER STATE */
-.nav-text:hover {
-  background: rgba(43, 43, 43, 1);
-  color: #ffffff;
-  transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  border-color: rgba(170, 170, 170, 0.6);
+/* =====================================================
+   CONTENT OVERLAY
+===================================================== */
+
+.gallery-overlay{
+
+    position:absolute;
+
+    left:40px;
+
+    right:40px;
+
+    bottom:40px;
+
+    z-index:5;
+
 }
 
-/* ACTIVE/CLICK STATE */
-.nav-text:active {
-  transform: translateY(-50%) scale(0.96);
+.gallery-overlay span{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
 }
 
-/* ================= TABLET ================= */
-@media (max-width: 1024px) {
-  .portfolio-track img {
-    width: 260px;
-    height: 360px;
-  }
+.gallery-overlay h3{
+
+    color:#fff;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:44px;
+
+    font-weight:500;
+
+    line-height:1.15;
+
+    margin-bottom:18px;
+
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  #portfolio.section {
-    padding: 70px 15px;
-  }
+.gallery-overlay a{
 
-  .portfolio-track {
-    flex-direction: column;
-    gap: 20px;
-  }
+    display:inline-flex;
 
-  .portfolio-track img {
-    width: 100%;
-    height: 300px;
-  }
+    align-items:center;
 
-  /* hide side images */
-  .side {
-    display: none;
-  }
+    justify-content:center;
 
-  /* nav becomes inline */
-  .nav-text {
-    position: static;
-    transform: none;
-    margin: 10px;
-    justify-content: center;
-  }
+    padding:14px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+        135deg,
+        #D4AF37,
+        #FFE7A0
+    );
+
+    color:#111;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.4s ease;
+
 }
 
-/* ================= SMALL MOBILE ================= */
-@media (max-width: 480px) {
-  .portfolio-header h2 {
-    font-size: 36px;
-  }
+.gallery-overlay a:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(212,175,55,.35);
+
+}
+/* =====================================================
+   LUXURY PORTFOLIO
+   PART 2
+   Gallery • Hover • Navigation
+===================================================== */
+
+/* =====================================================
+   IMAGE SHINE
+===================================================== */
+
+.gallery-card{
+    cursor:pointer;
+    transition:all .45s ease;
 }
 
-/* ================= ULTRA LARGE ================= */
-@media (min-width: 1600px) {
-  .portfolio-track img {
-    width: 500px;
-    height: 650px;
-  }
+.gallery-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:45%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.28),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.9s ease;
+
+    z-index:2;
+
 }
+
+.gallery-card:hover::after{
+
+    left:170%;
+
+}
+
+/* =====================================================
+   ACTIVE CARD
+===================================================== */
+
+.active-card{
+
+    transform:translateY(-12px);
+
+    border:1px solid rgba(212,175,55,.28);
+
+}
+
+.active-card:hover{
+
+    transform:translateY(-18px) scale(1.02);
+
+    box-shadow:
+        0 45px 90px rgba(0,0,0,.55),
+        0 0 35px rgba(212,175,55,.12);
+
+}
+
+/* =====================================================
+   SIDE CARD
+===================================================== */
+
+.side-card{
+
+    filter:grayscale(35%);
+
+    transition:.5s;
+
+}
+
+.side-card:hover{
+
+    opacity:.75;
+
+    filter:none;
+
+    transform:scale(.92);
+
+}
+
+/* =====================================================
+   GOLD FRAME
+===================================================== */
+
+.gallery-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border:1px solid rgba(212,175,55,.18);
+
+    border-radius:20px;
+
+    z-index:3;
+
+    pointer-events:none;
+
+}
+
+/* =====================================================
+   OVERLAY ANIMATION
+===================================================== */
+
+.gallery-overlay{
+
+    transform:translateY(25px);
+
+    opacity:0;
+
+    transition:.5s ease;
+
+}
+
+.active-card:hover .gallery-overlay{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.gallery-overlay span{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+}
+
+.gallery-overlay h3{
+
+    transition:.4s;
+
+}
+
+.active-card:hover h3{
+
+    color:#FFE7A0;
+
+}
+
+/* =====================================================
+   SLIDER BUTTONS
+===================================================== */
+
+.slider-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:72px;
+
+    height:72px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    font-size:28px;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    transition:.45s ease;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.left-btn{
+
+    left:-30px;
+
+}
+
+.right-btn{
+
+    right:-30px;
+
+}
+
+.slider-btn:hover{
+
+    background:linear-gradient(
+        135deg,
+        #D4AF37,
+        #FFE7A0
+    );
+
+    color:#111;
+
+    transform:translateY(-50%) scale(1.08);
+
+    box-shadow:
+        0 25px 55px rgba(212,175,55,.35);
+
+}
+
+.slider-btn:active{
+
+    transform:translateY(-50%) scale(.96);
+
+}
+
+/* =====================================================
+   BUTTON GLOW
+===================================================== */
+
+.slider-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        rgba(212,175,55,.35),
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.45s;
+
+    z-index:-1;
+
+}
+
+.slider-btn:hover::before{
+
+    opacity:1;
+
+}
+
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.portfolio-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.portfolio-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:50%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.portfolio-btn:hover::before{
+
+    left:160%;
+
+}
+
+/* =====================================================
+   IMAGE SHADOW
+===================================================== */
+
+.gallery-card{
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.gallery-card:hover{
+
+    box-shadow:
+        0 40px 85px rgba(0,0,0,.55);
+
+}
+
+/* =====================================================
+   FLOATING EFFECT
+===================================================== */
+
+.active-card{
+
+    animation:portfolioFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes portfolioFloat{
+
+    0%{
+
+        transform:translateY(-10px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* =====================================================
+   GOLD GLOW
+===================================================== */
+
+.active-card{
+
+    position:relative;
+
+}
+
+.active-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+        rgba(212,175,55,.12),
+        transparent 70%
+    );
+
+    filter:blur(70px);
+
+    z-index:-1;
+
+}
+
+/* =====================================================
+   CURSOR
+===================================================== */
+
+.gallery-card,
+.slider-btn,
+.portfolio-btn{
+
+    user-select:none;
+
+}
+/* =====================================================
+   LUXURY PORTFOLIO
+   PART 3
+   Animations • Responsive • Premium Polish
+===================================================== */
+
+/* =====================================================
+   STATS SECTION
+===================================================== */
+
+.portfolio-stats{
+
+    max-width:1200px;
+
+    margin:120px auto 70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.stat-box{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:45px 30px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.45s ease;
+
+}
+
+.stat-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(212,175,55,.10),
+        transparent 70%
+    );
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.stat-box:hover::before{
+
+    opacity:1;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(212,175,55,.25);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.40);
+
+}
+
+.stat-box h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:56px;
+
+    color:#D4AF37;
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    color:#ffffff;
+
+    font-family:"Inter",sans-serif;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.portfolio-cta{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:20px;
+
+}
+
+.portfolio-btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px 44px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #D4AF37,
+        #FFE7A0
+    );
+
+    color:#111;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.45s ease;
+
+    box-shadow:
+        0 18px 45px rgba(212,175,55,.30);
+
+}
+
+.portfolio-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 30px 70px rgba(212,175,55,.40);
+
+}
+
+/* =====================================================
+   SECTION FADE
+===================================================== */
+
+.portfolio-section{
+
+    animation:portfolioFade 1s ease;
+
+}
+
+@keyframes portfolioFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   FLOATING BACKGROUND
+===================================================== */
+
+.portfolio-glow{
+
+    animation:glowMove 8s ease-in-out infinite alternate;
+
+}
+
+.circle-one{
+
+    animation:floatOne 12s ease-in-out infinite;
+
+}
+
+.circle-two{
+
+    animation:floatTwo 15s ease-in-out infinite;
+
+}
+
+@keyframes glowMove{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+@keyframes floatOne{
+
+    50%{
+
+        transform:translateY(-22px);
+
+    }
+
+}
+
+@keyframes floatTwo{
+
+    50%{
+
+        transform:translateY(22px);
+
+    }
+
+}
+
+/* =====================================================
+   HEADING ANIMATION
+===================================================== */
+
+.portfolio-heading h2{
+
+    animation:titleFade 1.2s ease;
+
+}
+
+@keyframes titleFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   IMAGE LOADING EFFECT
+===================================================== */
+
+.gallery-card img{
+
+    animation:imageFade .8s ease;
+
+}
+
+@keyframes imageFade{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(1.08);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1200px){
+
+    .portfolio-slider{
+
+        gap:20px;
+
+    }
+
+    .active-card{
+
+        width:470px;
+
+        height:620px;
+
+    }
+
+    .side-card{
+
+        width:260px;
+
+        height:420px;
+
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+    .portfolio-section{
+
+        padding:90px 20px;
+
+    }
+
+    .portfolio-heading{
+
+        margin-bottom:60px;
+
+    }
+
+    .portfolio-heading h2{
+
+        font-size:48px;
+
+    }
+
+    .portfolio-heading p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .portfolio-slider{
+
+        flex-direction:column;
+
+    }
+
+    .side-card{
+
+        display:none;
+
+    }
+
+    .active-card{
+
+        width:100%;
+
+        max-width:420px;
+
+        height:560px;
+
+    }
+
+    .slider-btn{
+
+        position:static;
+
+        transform:none;
+
+        margin:15px 8px;
+
+    }
+
+    .portfolio-stats{
+
+        grid-template-columns:1fr;
+
+        margin-top:70px;
+
+    }
+
+    .portfolio-btn{
+
+        width:100%;
+
+        max-width:340px;
+
+    }
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width:480px){
+
+    .portfolio-section{
+
+        padding:70px 16px;
+
+    }
+
+    .portfolio-heading span{
+
+        font-size:11px;
+
+        letter-spacing:3px;
+
+    }
+
+    .portfolio-heading h2{
+
+        font-size:38px;
+
+    }
+
+    .gallery-overlay{
+
+        left:24px;
+
+        right:24px;
+
+        bottom:24px;
+
+    }
+
+    .gallery-overlay h3{
+
+        font-size:30px;
+
+    }
+
+    .gallery-overlay a{
+
+        width:100%;
+
+        padding:14px 20px;
+
+    }
+
+    .stat-box{
+
+        padding:35px 20px;
+
+    }
+
+    .stat-box h3{
+
+        font-size:42px;
+
+    }
+
+}
+
+/* =====================================================
+   ULTRA WIDE
+===================================================== */
+
+@media (min-width:1600px){
+
+    .portfolio-slider{
+
+        max-width:1650px;
+
+    }
+
+    .active-card{
+
+        width:640px;
+
+        height:820px;
+
+    }
+
+    .side-card{
+
+        width:380px;
+
+        height:600px;
+
+    }
+
+    .portfolio-heading h2{
+
+        font-size:105px;
+
+    }
+
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.slider-btn:focus,
+.portfolio-btn:focus{
+
+    outline:2px solid #D4AF37;
+
+    outline-offset:6px;
+
+}
+
+/* =====================================================
+   CUSTOM SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#120505;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#D4AF37;
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#C79B24;
+
+}
+
+/* =====================================================
+   PREMIUM FINISH
+===================================================== */
+
+.gallery-card,
+.slider-btn,
+.portfolio-btn,
+.stat-box{
+
+    will-change:transform;
+
+}
+
+.gallery-card,
+.slider-btn,
+.portfolio-btn,
+.stat-box{
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease,
+        background .45s ease;
+
+}
+
+/* =====================================================
+   END OF FILE
+===================================================== */
